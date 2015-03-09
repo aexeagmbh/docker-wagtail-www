@@ -1,0 +1,242 @@
+{% load core_tags static compress wagtailuserbar wagtailcore_tags wagtailimages_tags %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{{ self.search_description }}" />
+        <title>{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}</title>
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto:400,500,700,900,300">
+        {% compress css %}
+        <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+        {% endcompress %}
+
+        <script>
+document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+        </script>
+        <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
+    </head>
+
+    <body>
+        <div class="container">
+            {% if request.user.is_authenticated %}
+            {% wagtailuserbar %}
+            {% endif %}
+
+            <header role="banner">
+                <section>
+
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <nav class="top-bar clearfix" data-topbar role="navigation">
+                                <ul class="title-area">
+                                    <li class="name">
+                                        {% get_site_root as site_root %}
+                                        <a href="{{ site_root.url }}" class="logo">
+                                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+
+                                                <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+                                                <g id="q">
+                                                <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                                </g>
+                                                <g style="fill:#f8e034" id="text">
+                                                <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                                <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                                </g>
+                                                </g>
+                                            </svg>
+
+                                            AX
+
+                                        </a>
+                                    </li>
+                                    <li class="toggle-topbar menu-icon">
+                                        <a href="#"><span>Menu</span></a>
+                                    </li>
+                                </ul>
+                                <div class="top-bar-section clearfix">
+                                    {% block menu %}
+                                    {% get_site_root as site_root %}
+                                    {% top_menu parent=site_root calling_page=self %}
+                                    {% endblock %}
+                                    {# <ul class="left"> #}
+                                    {#     <li> #}
+                                    {#         <a href="/">Home</a> #}
+                                    {#     </li> #}
+                                    {#     <li> #}
+                                    {#         <a href="/en/company/">Company</a> #}
+                                    {#     </li> #}
+                                    {#     <li> #}
+                                    {#         <a href="/en/contact/">Contact</a> #}
+                                    {#     </li> #}
+                                    {#     <li> #}
+                                    {#         <a href="http://blog.ax-semantics.com">Blog</a> #}
+                                    {#     </li> #}
+                                    {#     <li> #}
+                                    {#         <a href="/en/press/">Press</a> #}
+                                    {#     </li> #}
+                                    {# </ul> #}
+                                    <ul class="right">
+                                        <li>
+                                            <a href="https://my.ax-semantics.com/accounts/login/">
+                                                Log in
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://my.ax-semantics.com/accounts/signup/">
+                                                Sign up
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                {% block header %}
+                {% if self.header_title %}
+                <section class="intro">
+                    {% if self.header_img %}
+                    <div class="intro-image">
+                        {% image self.header_img original class="intro image" %}
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h1>{{ self.header_title }}</h1>
+                            <p class="subline"><strong>{{ self.header_slogan }}</strong></p>
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
+                {% endblock %}
+
+            </header>
+
+
+            <main role="main">
+            {% block main_content %}
+            {% endblock main_content %}
+            </main>
+            <footer role="contentinfo">
+                {% if self.footer_text %}
+                <div class="row">
+                    <div class="large-12 columns">
+                        {{ self.footer_text|richtext }}
+                    </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="large-12 columns">
+                        <a href="#" class="logo">
+                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+
+                                <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+                                <g id="q">
+                                <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                </g>
+                                <g style="fill:#f8e034" id="text">
+                                <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                </g>
+                                </g>
+                            </svg>
+
+                            AX
+
+                        </a>
+                        <div class="row">
+                            <div class="copyright small-12 medium-6 columns">
+                                © {% now "Y" %} aexea GmbH. All rights reserved
+                            </div>
+
+                            <div class="text-right small-12 medium-6 columns">
+                                <a href="/legal/">
+                                    Legal / Imprint
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </footer>
+                </div>
+
+                {% compress js %}
+                <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+                <script src="{% static 'bower_components/foundation/js/foundation/foundation.js' %}"></script>
+                <script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
+                <script src="{% static 'js/app.js' %}"></script>
+                {% endcompress %}
+
+                <script type="text/javascript">
+window.liveSettings = {
+    api_key: "51d0bf36641a4d3e950af0d02c1fa3d7",
+    picker: "bottom-right",
+    detectlang: true,
+    dynamic: true,
+    autocollect: true
+};
+                </script>
+                <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+
+
+                <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-50513178-1', 'ax-semantics.com');
+ga('send', 'pageview');
+
+                </script>
+
+
+
+
+                <!-- begin olark code -->
+                <script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+    (a.s=a.s||[]).push(arguments)};var a=f[z]._={
+    },q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+        f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+        0:+new Date};a.P=function(u){
+            a.p[u]=new Date-a.p[0]};function s(){
+                a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+                    hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+                        return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+                            b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+                                b.contentWindow[g].open()}catch(w){
+                                    c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+                                        var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+                                            b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+                loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+                /* custom configuration goes here (www.olark.com/documentation) */
+                olark.identify('8653-269-10-5392');/*]]>*/</script><noscript><a href="https://www.olark.com/site/8653-269-10-5392/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+                <!-- end olark code -->
+
+
+
+                <!-- KISSmetrics tracking snippet -->
+                <script type="text/javascript">var _kmq = _kmq || [];
+var _kmk = _kmk || 'ffe4ca622d6d4b7d1e4b78fc610a42c0a9ac1a33';
+function _kms(u){
+    setTimeout(function(){
+        var d = document, f = d.getElementsByTagName('script')[0],
+        s = d.createElement('script');
+        s.type = 'text/javascript'; s.async = true; s.src = u;
+        f.parentNode.insertBefore(s, f);
+    }, 1);
+}
+_kms('//i.kissmetrics.com/i.js');
+_kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+                </script>
+    </body>
+
+</html>

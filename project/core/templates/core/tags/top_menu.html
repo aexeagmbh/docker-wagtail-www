@@ -1,0 +1,12 @@
+{% load core_tags wagtailcore_tags %}
+
+<ul class="left">
+    {% for menuitem in menuitems %}
+    <li class="{% if menuitem.active %}active {% endif %}{% if menuitem.show_dropdown %}has-dropdown{% endif %}">
+        <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+        {% if menuitem.show_dropdown %}
+        {% sub_menu parent=menuitem calling_page=calling_page %}
+        {% endif %}
+    </li>       
+    {% endfor %}
+</ul>
