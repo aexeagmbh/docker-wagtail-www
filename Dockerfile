@@ -12,7 +12,6 @@ RUN pip3 install gunicorn django-extensions
 ADD project /opt/code
 
 RUN chown -R uid1000: .
-RUN chmod +x start.sh
 RUN mkdir /log
 RUN chown -R uid1000: /log
 RUN mkdir -p static
