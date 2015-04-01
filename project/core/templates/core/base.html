@@ -1,180 +1,190 @@
 {% load core_tags static compress wagtailuserbar wagtailcore_tags wagtailimages_tags %}
-
 <!doctype html>
 <html class="no-js" lang="en">
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="{{ self.search_description }}" />
         <title>{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}</title>
-
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto:400,500,700,900,300">
         {% compress css %}
         <link rel="stylesheet" href="{% static 'css/app.css' %}" />
-        {% endcompress %}
-
-        <script>
-document.documentElement.className = document.documentElement.className.replace("no-js", "js");
-        </script>
-        <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
-    </head>
-
-    <body>
-        <div class="container">
-            {% if request.user.is_authenticated %}
+    {% endcompress %}
+    <script>
+    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+    <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        {% if request.user.is_authenticated %}
             {% wagtailuserbar %}
-            {% endif %}
-
-            <header role="banner">
-                <section>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <nav class="top-bar clearfix" data-topbar role="navigation">
-                                <ul class="title-area">
-                                    <li class="name">
-                                        {% get_site_root as site_root %}
-                                        <a href="{{ site_root.url }}" class="logo">
-                                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
-
-                                                <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+        {% endif %}
+        <header role="banner">
+            <section>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <nav class="top-bar clearfix" data-topbar role="navigation">
+                            <ul class="title-area">
+                                <li class="name">
+                                    {% get_site_root as site_root %}
+                                    <a href="{{ site_root.url }}" class="logo">
+                                        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+                                            <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
                                                 <g id="q">
-                                                <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                                    <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
                                                 </g>
                                                 <g style="fill:#f8e034" id="text">
-                                                <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                                <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                                <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
-                                                <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                                    <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                    <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                    <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                                    <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
                                                 </g>
-                                                </g>
-                                            </svg>
-
-                                            AX
-
-                                        </a>
-                                    </li>
-                                    <li class="toggle-topbar menu-icon">
-                                        <a href="#"><span>Menu</span></a>
-                                    </li>
-                                </ul>
-                                <div class="top-bar-section clearfix">
-                                    {% block menu %}
+                                            </g>
+                                        </svg>
+                                        AX
+                                    </a>
+                                </li>
+                                <li class="toggle-topbar menu-icon">
+                                    <a href="#"><span>Menu</span></a>
+                                </li>
+                            </ul>
+                            <div class="top-bar-section clearfix">
+                                {% block menu %}
                                     {% get_site_root as site_root %}
                                     {% top_menu parent=site_root calling_page=self %}
-                                    {% endblock %}
-                                    {# <ul class="left"> #}
+                                {% endblock %}
+                                {# <ul class="left"> #}
                                     {#     <li> #}
-                                    {#         <a href="/">Home</a> #}
+                                        {#         <a href="/">Home</a> #}
                                     {#     </li> #}
                                     {#     <li> #}
-                                    {#         <a href="/en/company/">Company</a> #}
+                                        {#         <a href="/en/company/">Company</a> #}
                                     {#     </li> #}
                                     {#     <li> #}
-                                    {#         <a href="/en/contact/">Contact</a> #}
+                                        {#         <a href="/en/contact/">Contact</a> #}
                                     {#     </li> #}
                                     {#     <li> #}
-                                    {#         <a href="http://blog.ax-semantics.com">Blog</a> #}
+                                        {#         <a href="http://blog.ax-semantics.com">Blog</a> #}
                                     {#     </li> #}
                                     {#     <li> #}
-                                    {#         <a href="/en/press/">Press</a> #}
+                                        {#         <a href="/en/press/">Press</a> #}
                                     {#     </li> #}
-                                    {# </ul> #}
-                                    <ul class="right">
-                                        <li>
-                                            <a href="https://my.ax-semantics.com/accounts/login/">
-                                                Log in
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://my.ax-semantics.com/accounts/signup/">
-                                                Sign up
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
+                                {# </ul> #}
+                                <ul class="right">
+                                    <li>
+                                        <a href="https://my.ax-semantics.com/accounts/login/">
+                                            Log in
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://my.ax-semantics.com/accounts/signup/">
+                                            Sign up
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
-                </section>
-                {% block header %}
+                </div>
+            </section>
+            {% block header %}
                 {% if self.header_title %}
-                <section class="intro">
-                    {% if self.header_img %}
-                    <div class="intro-image">
-                        {% image self.header_img original class="intro image" %}
-                    </div>
-                    {% endif %}
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <h1>{{ self.header_title }}</h1>
-                            <p class="subline"><strong>{{ self.header_slogan }}</strong></p>
+                    <section class="intro">
+                        {% if self.header_img %}
+                            <div class="intro-image">
+                                {% image self.header_img original class="intro image" %}
+                            </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <h1>{{ self.header_title }}</h1>
+                                <p class="subline"><strong>{{ self.header_slogan }}</strong></p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
                 {% endif %}
-                {% endblock %}
-
-            </header>
-
-
-            <main role="main">
-            {% block main_content %}
-            {% endblock main_content %}
-            </main>
-            <footer role="contentinfo">
-                {% if self.footer_text %}
+            {% endblock %}
+        </header>
+        <main role="main">
+        {% block main_content %}
+        {% endblock main_content %}
+        </main>
+        <footer role="contentinfo">
+            {% if self.footer_text %}
                 <div class="row">
                     <div class="large-12 columns">
                         {{ self.footer_text|richtext }}
                     </div>
                 </div>
-                {% endif %}
-                <div class="row">
-                    <div class="large-12 columns">
-                        <a href="#" class="logo">
-                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
-
-                                <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+            {% endif %}
+            <div class="row">
+                <div class="large-12 columns">
+                    <a href="#" class="logo">
+                        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+                            <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
                                 <g id="q">
-                                <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                    <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
                                 </g>
                                 <g style="fill:#f8e034" id="text">
-                                <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
-                                <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                    <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                    <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                    <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                    <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
                                 </g>
-                                </g>
-                            </svg>
-
-                            AX
-
-                        </a>
-                        <div class="row">
-                            <div class="copyright small-12 medium-6 columns">
-                                © {% now "Y" %} aexea GmbH. All rights reserved
-                            </div>
-
-                            <div class="text-right small-12 medium-6 columns">
-                                <a href="/legal/">
-                                    Legal / Imprint
-                                </a>
-                            </div>
+                            </g>
+                        </svg>
+                        AX
+                    </a>
+                    <div class="row">
+                        <div class="copyright small-12 medium-6 columns">
+                            © {% now "Y" %} aexea GmbH. All rights reserved
                         </div>
-                    </div>
-            </footer>
-                </div>
-
-                {% compress js %}
-                <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
-                <script src="{% static 'bower_components/foundation/js/foundation/foundation.js' %}"></script>
-                <script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
-                <script src="{% static 'js/app.js' %}"></script>
-                {% endcompress %}
-
-                <script type="text/javascript">
+                        <div class="small-12 medium-12 large-4 large-push-5 columns">
+                            <ul class="social-icons">
+                                <li class="social-icons__item">
+                                    <a href="">
+                                    <svg class="icon-twitter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/social-icons.svg#icon-twitter"></use></svg>
+                                </a>
+                            </li>
+                            <li class="social-icons__item">
+                                <a href="">
+                                <svg class="icon-facebook"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/social-icons.svg#icon-facebook"></use></svg>
+                            </a>
+                        </li>
+                        <li class="social-icons__item">
+                            <a href="">
+                            <svg class="icon-feed"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/social-icons.svg#icon-feed"></use></svg>
+                        </a>
+                    </li>
+                    <li class="social-icons__item">
+                        <a href="">
+                        <svg class="icon-youtube"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/social-icons.svg#icon-youtube"></use></svg>
+                    </a>
+                </li>
+                <li class="social-icons__item">
+                    <a href="">
+                    <svg class="icon-github"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/social-icons.svg#icon-github"></use></svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="text-right small-12 medium-6 columns">
+        <a href="/legal/">
+            Legal / Imprint
+        </a>
+    </div>
+</div>
+</div>
+</footer>
+</div>
+{% compress js %}
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation/foundation.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+{% endcompress %}
+<script type="text/javascript">
 window.liveSettings = {
     api_key: "51d0bf36641a4d3e950af0d02c1fa3d7",
     picker: "bottom-right",
@@ -222,7 +232,7 @@ f[z]=function(){
                 <!-- end olark code -->
 
 
-
+                <!--test-->
                 <!-- KISSmetrics tracking snippet -->
                 <script type="text/javascript">var _kmq = _kmq || [];
 var _kmk = _kmk || 'ffe4ca622d6d4b7d1e4b78fc610a42c0a9ac1a33';
@@ -237,6 +247,5 @@ function _kms(u){
 _kms('//i.kissmetrics.com/i.js');
 _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
                 </script>
-    </body>
-
+</body>
 </html>
