@@ -1,59 +1,56 @@
 {% extends "core/base.html" %}
 {% load wagtailcore_tags wagtailimages_tags %}
-
 {% block main_content %}
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            <div class="m-quote">
-                {% image self.block1_thumbnail fill-170x170 class="quote-image" %}
-                <blockquote>
-                    {{ self.block1_content|richtext }}
-                </blockquote>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="m-quote">
+                    {% image self.block1_thumbnail fill-170x170 class="quote-image" %}
+                    <blockquote>
+                        {{ self.block1_content|richtext }}
+                    </blockquote>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.block2_content|richtext }}
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                {{ self.block2_content|richtext }}
+            </div>
         </div>
-    </div>
-</section>
-
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.block3_content|richtext }}
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                {{ self.block3_content|richtext }}
+            </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.block4_content|richtext }}
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                {{ self.block4_content|richtext }}
+            </div>
         </div>
-    </div>
-</section>
-{% if self.conversion_title or self.conversion_url or self.conversion_button_label %}
-<section class="action-bar">
-    <div class="row">
-        <div class="large-12 columns">
-            <h3>{{ self.conversion_title }}</h3>
-            <a class="button bigger" href="{{ self.conversion_url }}">{{ self.conversion_button_label }}</a>
-        </div>
-    </div>
-</section>
-{% endif %}
-{% if self.foot_row %}
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.foot_row|richtext }}
-        </div>
-    </div>
-</section>
-{% endif %}
+    </section>
+    {% if self.conversion_title or self.conversion_url or self.conversion_button_label %}
+        <section class="action-bar">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h3>{{ self.conversion_title }}</h3>
+                    <a class="button bigger" href="{{ self.conversion_url }}">{{ self.conversion_button_label }}</a>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% if self.foot_row %}
+        <section>
+            <div class="row">
+                <div class="large-12 columns">
+                    {{ self.foot_row|richtext }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
 {% endblock main_content %}

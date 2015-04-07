@@ -1,130 +1,126 @@
 {% extends "core/base.html" %}
 {% load wagtailcore_tags wagtailimages_tags %}
-
 {% block main_content %}
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            <h2>{{ self.block1_title }}</h2>
-            <p class="subline">{{ self.block1_subline }}</p>
-            {{ self.block1_subtitle|richtext }}
-
-            <ul class="medium-block-grid-2 large-block-grid-2">
-                <li>
-                    {{ self.block1_content1|richtext }}
-                    <a href="{{ self.block1_button1_url }}" class="button">{{ self.block1_button1_label }}</a>
-                </li>
-                <li>
-                    {{ self.block1_content2|richtext }}
-                    <a href="{{ self.block1_button2_url }}" class="button">{{ self.block1_button2_label }}</a>
-                </li>
-                <li>
-                    {{ self.block1_content3|richtext }}
-                    <a href="{{ self.block1_button3_url }}" class="button">{{ self.block1_button3_label }}</a>
-                </li>
-                <li>
-                    {{ self.block1_content4|richtext }}
-                    <a href="{{ self.block1_button4_url }}" class="button">{{ self.block1_button4_label }}</a>
-                </li>
-            </ul>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>{{ self.block1_title }}</h2>
+                <p class="subline">{{ self.block1_subline }}</p>
+                {{ self.block1_subtitle|richtext }}
+                <ul class="medium-block-grid-2 large-block-grid-2">
+                    <li>
+                        {{ self.block1_content1|richtext }}
+                        <a href="{{ self.block1_button1_url }}" class="button">{{ self.block1_button1_label }}</a>
+                    </li>
+                    <li>
+                        {{ self.block1_content2|richtext }}
+                        <a href="{{ self.block1_button2_url }}" class="button">{{ self.block1_button2_label }}</a>
+                    </li>
+                    <li>
+                        {{ self.block1_content3|richtext }}
+                        <a href="{{ self.block1_button3_url }}" class="button">{{ self.block1_button3_label }}</a>
+                    </li>
+                    <li>
+                        {{ self.block1_content4|richtext }}
+                        <a href="{{ self.block1_button4_url }}" class="button">{{ self.block1_button4_label }}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="row">
-        <div class="large-12 columns text-center">
-            <h2>{{ self.block1_conversion_title }}</h2>
-            <a href="{{ self.block1_conversion_url }}" class="button">{{ self.block1_conversion_button_label }}</a>
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-12 columns text-center">
+                <h2>{{ self.block1_conversion_title }}</h2>
+                <a href="{{ self.block1_conversion_url }}" class="button">{{ self.block1_conversion_button_label }}</a>
+            </div>
         </div>
-    </div>
-</section>
-<section class="alternate">
-    <div class="row">
-        <div class="large-12 columns">
-            <h2>{{ self.block2_title }}</h2>
-
-            <ul class="medium-block-grid-2 large-block-grid-2 block-counter">
-                <li>
-                    {{ self.block2_content1|richtext }}
-                </li>
-                <li>
-                    {{ self.block2_content2|richtext }}
-                </li>
-                <li>
-                    {{ self.block2_content3|richtext }}
-                </li>
-                <li>
-                    {{ self.block2_content4|richtext }}
-                </li>
-            </ul>
+    </section>
+    <section class="alternate">
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>{{ self.block2_title }}</h2>
+                <ul class="medium-block-grid-2 large-block-grid-2 block-counter">
+                    <li>
+                        {{ self.block2_content1|richtext }}
+                    </li>
+                    <li>
+                        {{ self.block2_content2|richtext }}
+                    </li>
+                    <li>
+                        {{ self.block2_content3|richtext }}
+                    </li>
+                    <li>
+                        {{ self.block2_content4|richtext }}
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
-<section>
-
-    <div class="row">
-        <div class="large-12 columns">
-            <ul class="medium-block-grid-1 large-block-grid-2">
-                <li>
-                    <div class="m-quote">
-                        {% image self.block3_thumbnail1 fill-170x170 class="quote-image" %}
-                        <blockquote>
-                            {{ self.block3_content1|richtext }}
-                        </blockquote>
-                    </div>
-                </li>
-                <li>
-                    <div class="m-quote">
-                        {% image self.block3_thumbnail2 fill-170x170 class="quote-image" %}
-                        <blockquote>
-                            {{ self.block3_content2|richtext }}
-                        </blockquote>
-                    </div>
-                </li>
-                <li>
-                    <div class="m-quote">
-                        {% image self.block3_thumbnail3 fill-170x170 class="quote-image" %}
-                        <blockquote>
-                            {{ self.block3_content3|richtext }}
-                        </blockquote>
-                    </div>
-                </li>
-                <li>
-                    <div class="m-quote">
-                        {% image self.block3_thumbnail4 fill-170x170 class="quote-image" %}
-                        <blockquote>
-                            {{ self.block3_content4|richtext }}
-                        </blockquote>
-                    </div>
-                </li>
-            </ul>
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-12 columns">
+                <ul class="medium-block-grid-1 large-block-grid-2">
+                    <li>
+                        <div class="m-quote">
+                            {% image self.block3_thumbnail1 fill-170x170 class="quote-image" %}
+                            <blockquote>
+                                {{ self.block3_content1|richtext }}
+                            </blockquote>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-quote">
+                            {% image self.block3_thumbnail2 fill-170x170 class="quote-image" %}
+                            <blockquote>
+                                {{ self.block3_content2|richtext }}
+                            </blockquote>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-quote">
+                            {% image self.block3_thumbnail3 fill-170x170 class="quote-image" %}
+                            <blockquote>
+                                {{ self.block3_content3|richtext }}
+                            </blockquote>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-quote">
+                            {% image self.block3_thumbnail4 fill-170x170 class="quote-image" %}
+                            <blockquote>
+                                {{ self.block3_content4|richtext }}
+                            </blockquote>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
-<section class="action-bar">
-    <div class="row">
-        <div class="large-12 columns">
-            <h2>{{ self.block_signup_title }}</h2>
-            <a class="button" href="https://my.ax-semantics.com/accounts/signup/">{{ self.block_signup_button_label }}</a>
+    </section>
+    <section class="action-bar">
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>{{ self.block_signup_title }}</h2>
+                <a class="button" href="https://my.ax-semantics.com/accounts/signup/">{{ self.block_signup_button_label }}</a>
+            </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="row">
-        <div class="large-6 columns">
-            {{ self.block4_content1|richtext }}
+    </section>
+    <section>
+        <div class="row">
+            <div class="large-6 columns">
+                {{ self.block4_content1|richtext }}
+            </div>
+            <div class="large-6 columns">
+                {{ self.block4_content2|richtext }}
+            </div>
         </div>
-        <div class="large-6 columns">
-            {{ self.block4_content2|richtext }}
+    </section>
+    <section class="colored">
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>{{ self.block5_title }}</h2>
+                {{ self.block5_content|richtext }}
+            </div>
         </div>
-    </div>
-</section>
-<section class="colored">
-    <div class="row">
-        <div class="large-12 columns">
-            <h2>{{ self.block5_title }}</h2>
-            {{ self.block5_content|richtext }}
-        </div>
-    </div>
-</section>
+    </section>
 {% endblock main_content %}

@@ -1,43 +1,42 @@
 {% extends "core/base.html" %}
 {% load wagtailcore_tags wagtailimages_tags %}
-
 {% block main_content %}
-{% if self.teaser %}
-<section class="alternate">
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.teaser|richtext }}
+    {% if self.teaser %}
+        <section class="alternate">
+            <div class="row">
+                <div class="large-12 columns">
+                    {{ self.teaser|richtext }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    <section>
+        <div class="row">
+            <div class="medium-8 columns">
+                {{ self.main_content_left|richtext }}
+            </div>
+            <div class="medium-4 columns">
+                {{ self.main_content_right|richtext }}
+            </div>
         </div>
-    </div>
-</section>
-{% endif %}
-<section>
-    <div class="row">
-        <div class="medium-8 columns">
-            {{ self.main_content_left|richtext }}
-        </div>
-        <div class="medium-4 columns">
-            {{ self.main_content_right|richtext }}
-        </div>
-    </div>
-</section>
-{% if self.conversion_title or self.conversion_url or self.conversion_button_label %}
-<section class="action-bar">
-    <div class="row">
-        <div class="large-12 columns">
-            <h3>{{ self.conversion_title }}</h3>
-            <a class="button bigger" href="{{ self.conversion_url }}">{{ self.conversion_button_label }}</a>
-        </div>
-    </div>
-</section>
-{% endif %}
-{% if self.foot_row %}
-<section>
-    <div class="row">
-        <div class="large-12 columns">
-            {{ self.foot_row|richtext }}
-        </div>
-    </div>
-</section>
-{% endif %}
+    </section>
+    {% if self.conversion_title or self.conversion_url or self.conversion_button_label %}
+        <section class="action-bar">
+            <div class="row">
+                <div class="large-12 columns">
+                    <h3>{{ self.conversion_title }}</h3>
+                    <a class="button bigger" href="{{ self.conversion_url }}">{{ self.conversion_button_label }}</a>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% if self.foot_row %}
+        <section>
+            <div class="row">
+                <div class="large-12 columns">
+                    {{ self.foot_row|richtext }}
+                </div>
+            </div>
+        </section>
+    {% endif %}
 {% endblock main_content %}
