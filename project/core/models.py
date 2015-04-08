@@ -8,7 +8,7 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, Stre
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.blocks import StructBlock
-
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 AX_BASE_FIELDS = [
     MultiFieldPanel(
@@ -286,16 +286,23 @@ ProductPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('foot_row', classname="full"),
 ]
 
+
 class TeamPage(Page):
     name = models.CharField(max_length=50)
     jobTitle = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
-    tel=models.CharField(max_length=50)
-    emploees=StreamField([
-        ('name' , blocks.CharBlock(label="Name")),
-        ('jobTitle', blocks.CharBlock(label="Name")),
-
-
+    tel = models.CharField(max_length=50)
+    emploees = StreamField([
+        ('emploee', blocks.StructBlock([
+        ('name', blocks.CharBlock(label="Name")),
+        ('jobTitle', blocks.CharBlock(label="Job title")),
+        ('tel', blocks.CharBlock(label="Telephone")),
+        ('email', blocks.CharBlock(label="Email")),
+        ('image', ImageChooserBlock()),
+        ]))        
         ])
 
+TeamPage.content_panels = [
+StreamFieldPanel('emploees')
 
+]
