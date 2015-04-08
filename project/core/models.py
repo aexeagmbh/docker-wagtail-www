@@ -3,9 +3,11 @@ import django.db.models.options as options
 options.DEFAULT_NAMES = options.DEFAULT_NAMES + ('description',)
 
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
+from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.wagtailcore import blocks
+from wagtail.wagtailcore.blocks import StructBlock
 
 
 AX_BASE_FIELDS = [
@@ -283,3 +285,17 @@ ProductPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('conversion_button_label', classname="full"),
     FieldPanel('foot_row', classname="full"),
 ]
+
+class TeamPage(Page):
+    name = models.CharField(max_length=50)
+    jobTitle = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    tel=models.CharField(max_length=50)
+    emploees=StreamField([
+        ('name' , blocks.CharBlock(label="Name")),
+        ('jobTitle', blocks.CharBlock(label="Name")),
+
+
+        ])
+
+
