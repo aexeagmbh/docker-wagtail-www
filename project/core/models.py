@@ -288,21 +288,27 @@ ProductPage.content_panels = AX_BASE_FIELDS + [
 
 
 class TeamPage(Page):
-    name = models.CharField(max_length=50)
-    jobTitle = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-    tel = models.CharField(max_length=50)
-    emploees = StreamField([
-        ('emploee', blocks.StructBlock([
-        ('name', blocks.CharBlock(label="Name")),
-        ('jobTitle', blocks.CharBlock(label="Job title")),
-        ('tel', blocks.CharBlock(label="Telephone")),
-        ('email', blocks.CharBlock(label="Email")),
-        ('image', ImageChooserBlock()),
-        ]))        
-        ])
+    header_title = models.CharField(max_length=512, blank=True)
+    header_slogan = models.CharField(max_length=512, blank=True)
+    header_img = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    footer_text = RichTextField(blank=True)
 
-TeamPage.content_panels = [
-StreamFieldPanel('emploees')
+    employees = StreamField([
+        ('employee', blocks.StructBlock([
+            ('name', blocks.CharBlock()),
+            ('job_title', blocks.CharBlock()),
+            ('telephone', blocks.CharBlock()),
+            ('email', blocks.CharBlock()),
+            ('image', ImageChooserBlock()),
+        ]))
+    ], null=True, blank=True)
 
+TeamPage.content_panels = AX_BASE_FIELDS + [
+    StreamFieldPanel('employees')
 ]
