@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block main_content %}
+	<div class="employees">
+		
+
+		{% for block in self.employees %}
+			
+			<ul class="employee">
+				<li class="img"> {% image block.value.image  width-400 %} </li>
+				<li class="name"> {{block.value.name}} </li>
+				<li class="jobtitle">{{block.value.job_title}}</li>
+				<li class="telephone"> {{block.value.telephone}} </li>
+				<li class="email">{{block.value.email}}  </li>
+			</ul>
+		{% endfor %}
+	</div>
+{% endblock main_content %}
