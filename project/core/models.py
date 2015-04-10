@@ -306,9 +306,10 @@ class TeamPage(Page):
             ('telephone', blocks.CharBlock()),
             ('email', blocks.CharBlock()),
             ('image', ImageChooserBlock()),
-        ]))
+        ])) 
     ], null=True, blank=True)
 
 TeamPage.content_panels = AX_BASE_FIELDS + [
+    FieldPanel('title', classname="full title"),
     StreamFieldPanel('employees')
 ]
