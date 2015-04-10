@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'wagtail',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST': 'db',  # Set to empty string for localhost.
