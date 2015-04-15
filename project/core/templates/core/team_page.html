@@ -3,22 +3,47 @@
 {% block main_content %}
 	<div class="employees">
 		
-		<ul class="large-block-grid-5 medium-block-grid-3 small-block-grid-1">
+		<ul class="large-block-grid-6 medium-block-grid-4 small-block-grid-1">
 			{% for block in self.employees %}
 				<li>
 					<ul class="employee">
 						<li class="img"> {% image block.value.image  max-400x400  %} </li>
 						
-								<li class="name">{{block.value.name}} </li>
-								<li class="jobtitle"> <span class="firstrow"></span>{{block.value.job_title}}</li>
-								<li class="telephone"> <span class="firstrow"><img src="{% static "img/smartphone86.svg"  %} " >
-								</span>{{block.value.telephone}}</li>
-								<li class="email"><span class="firstrow"><img src="{% static "img/envelope32.svg"  %}"  > </span>{{block.value.email}}  </li>
-							
-						</ul>
-					</li>
-					
-				{% endfor %}
-			</ul>
-		</div>
-	{% endblock main_content %}
+						<li class="name">
+							<div class="row">
+								<div class="large-1 columns"></div>
+								<div class="large-15 columns">
+									{{block.value.name}}
+								</div>
+							</div>
+						</li>
+						<li class="jobtitle">
+							<div class="row">
+								<div class="large-1 columns"></div>
+								<div class="large-15 columns">{{block.value.job_title}}</div>
+							</div>
+						</li>
+						<li class="telephone">
+							<div class="row">
+								<div class="large-1 columns " ></div>
+								<div class="large-15 columns ">
+									<i class="contact-icon phone"></i>{{block.value.telephone}}
+								</div>
+							</div>
+						</li>
+						<li class="email">
+							<div class="row">
+								<div class="large-1 columns "></div>
+								<div class="large-15 columns">
+								<i class="contact-icon mail"></i>{{block.value.email}}
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</li>
+				
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock main_content %}
