@@ -13,7 +13,8 @@
 							<div class="row">
 								<div class="large-1 columns"></div>
 								<div class="large-15 columns">
-									{{block.value.name}}
+									{{block.value.name}} <br/>
+									<img src=" {% static "img/chevron-right.svg" %}"
 								</div>
 							</div>
 						</li>
@@ -35,15 +36,22 @@
 							<div class="row">
 								<div class="large-1 columns "></div>
 								<div class="large-15 columns">
-								<i class="contact-icon mail"></i>{{block.value.email}}
+									<i class="contact-icon mail"></i>{{block.value.email}}
 								</div>
 							</div>
 						</li>
 						
 					</ul>
 				</li>
-				
+				<div class="last"></div>
 			{% endfor %}
 		</ul>
 	</div>
+	<script type="text/javascript">
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src="/static/js/teampage.js";
+		console.log(script)
+		var lastElement= document.getElementByTagName("html").lastChild.append(script);
+	</script>
 {% endblock main_content %}
