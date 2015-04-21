@@ -14,44 +14,38 @@
 								<div class="large-1 columns"></div>
 								<div class="large-15 columns">
 									{{block.value.name}} <br/>
-									<img src=" {% static "img/chevron-right.svg" %}"
+									<div class="arrow-icon">
+										<img src=" {% static "img/chevron-right.svg" %}"
+									</div>
 								</div>
-							</div>
-						</li>
-						<li class="jobtitle">
-							<div class="row">
-								<div class="large-1 columns"></div>
-								<div class="large-15 columns">{{block.value.job_title}}</div>
-							</div>
-						</li>
-						<li class="telephone">
-							<div class="row">
-								<div class="large-1 columns " ></div>
-								<div class="large-15 columns ">
-									<i class="contact-icon phone"></i>{{block.value.telephone}}
+							</li>
+							<li class="jobtitle">
+								<div class="row">
+									<div class="large-1 columns"></div>
+									<div class="large-15 columns">{{block.value.job_title}}</div>
 								</div>
-							</div>
-						</li>
-						<li class="email">
-							<div class="row">
-								<div class="large-1 columns "></div>
-								<div class="large-15 columns">
-									<i class="contact-icon mail"></i>{{block.value.email}}
+							</li>
+							<li class="telephone">
+								<div class="row">
+									<div class="large-1 columns " ></div>
+									<div class="large-15 columns ">
+										<i class="contact-icon phone"></i>{{block.value.telephone}}
+									</div>
 								</div>
-							</div>
-						</li>
-						
-					</ul>
-				</li>
-				<div class="last"></div>
-			{% endfor %}
-		</ul>
-	</div>
-	<script type="text/javascript">
-		var script = document.createElement("script");
-		script.type = "text/javascript";
-		script.src="/static/js/teampage.js";
-		console.log(script)
-		var lastElement= document.getElementByTagName("html").lastChild.append(script);
-	</script>
-{% endblock main_content %}
+							</li>
+							<li class="email">
+								<div class="row">
+									<div class="large-1 columns "></div>
+									<div class="large-15 columns">
+										<i class="contact-icon mail"></i>{{block.value.email}}
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</li>
+					<div class="last"></div>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endblock main_content %}
