@@ -188,6 +188,13 @@
 <script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>
 {% endcompress %}
+
+{% if self.employees%}
+{% compress js %}
+<script src="{% static 'js/teampage.js' %}"></script>
+{% endcompress %}
+{% endif %}
+
 <script type="text/javascript">
 window.liveSettings = {
     api_key: "51d0bf36641a4d3e950af0d02c1fa3d7",
