@@ -13,23 +13,21 @@
 							<div class="row">
 								<div class="large-1 columns"></div>
 								<div class="large-15 columns">
-									{{block.value.name}} <br/>
-									<div class="arrow-icon">
+
+									<div class="arrow-icon arrow-icon-1">
 										<img src=" {% static "img/chevron-right.svg" %}"
 									</div>
-								</div>
-							</li>
-							<li class="jobtitle">
-								<div class="row">
-									<div class="large-1 columns"></div>
-									<div class="large-15 columns">{{block.value.job_title}}</div>
-								</div>
-							</li>
-							<li class="telephone">
-								<div class="row">
-									<div class="large-1 columns " ></div>
-									<div class="large-15 columns ">
-										<i class="contact-icon phone"></i>{{block.value.telephone}}
+									<br/>
+									{{block.value.forename}} <br/>
+									{{block.value.surname}}
+										<div class="jobtitle">
+											<div class="row">
+												<div class="large-1 columns"></div>
+												<div class="large-15 columns">{{block.value.job_title}}</div>
+											</div>
+										</div>
+									<div class="arrow-icon arrow-icon-2">
+										<img  src=" {% static "img/chevron-right.svg" %}"
 									</div>
 								</div>
 							</li>
@@ -37,10 +35,26 @@
 								<div class="row">
 									<div class="large-1 columns "></div>
 									<div class="large-15 columns">
-										<i class="contact-icon mail"></i>{{block.value.email}}
+										<i class="contact-icon mail"></i>
+										<a href="mailto:{{block.value.email}}" >
+										{{block.value.email}}
+										</a>
 									</div>
 								</div>
 							</li>
+							{%if block.value.telephone  %}
+							<li class="telephone">
+								<div class="row">
+									<div class="large-1 columns " ></div>
+									<div class="large-15 columns ">
+										<i class="contact-icon phone"></i>
+										<a href="tel:{{block.value.telephone}}" >
+										{{block.value.telephone}}
+										</a>
+									</div>
+								</div>
+							</li>
+							{%endif%}
 							
 						</ul>
 					</li>
