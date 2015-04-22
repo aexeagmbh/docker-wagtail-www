@@ -1,55 +1,42 @@
 $(document).ready(function() {
 
 	var animateElements = function(that) {
-		event.preventDefault();
-	
+
+
+		var icon1 = that.find('.arrow-icon-1>img');
+		var icon2 = that.find('.arrow-icon-2>img');
 		
-		var offset = 14;
-		var elements = that.parents(".employee").children(" .jobtitle, .email , .telephone");
+		event.preventDefault();
+		
+		if (that.children().hasClass('telephone')) {
+
+			var elements = that.children(" .email , .telephone");
+			var offset = 9.6 + 4;
+		} else {
+			var elements = that.children(".email");
+			elements.css("background-color", "#DDDDDD")
+			var offset = 9.6 + 2;
+		}
 		elements.stop();
 		if (that.hasClass("isDown")) {
-				var d = 0;
 
-		that.children("img").css(
-		{
-
-			'-moz-transform': 'rotate(' + d + 'deg)',
-			'-webkit-transform': 'rotate(' + d + 'deg)',
-			'-o-transform': 'rotate(' + d + 'deg)',
-			'-ms-transform': 'rotate(' + d + 'deg)',
-			'transform': 'rotate(' + d + 'deg)'
-
-		});
 			elements = elements.map(function() {
 				return $(this).animate({
-					bottom: '6rem'
-				}, 1000)
+					bottom: '7.3rem'
+				}, 250)
 			})
 
+			icon1.css('visibility', 'hidden');
+			icon2.css('visibility', 'visible');
 		} else {
-
-				var d = -90;
-
-		that.children("img").css(
-		{
-
-			'-moz-transform': 'rotate(' + d + 'deg)',
-			'-webkit-transform': 'rotate(' + d + 'deg)',
-			'-o-transform': 'rotate(' + d + 'deg)',
-			'-ms-transform': 'rotate(' + d + 'deg)',
-			'transform': 'rotate(' + d + 'deg)'
-
-		});
+			icon1.css("visibility", "visible");
+			icon2.css("visibility", "hidden");
 			elements = elements.map(function() {
-
 				offset -= 2;
 				return $(this).animate({
-
-
 					bottom: offset + 'rem'
 
-				}, 1000)
-			});
+				}, 250) });
 
 		}
 
@@ -57,12 +44,13 @@ $(document).ready(function() {
 		return false;
 
 	}
-	$(".arrow-icon").click(function() {
-
+	$(".employee").click(function() {
 		animateElements($(this));
 
 	})
-
+	$(".telephone, .email ").click(function(e) {
+		e.stopPropagation();
+	})
 
 
 });
