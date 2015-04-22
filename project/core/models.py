@@ -301,9 +301,10 @@ class TeamPage(Page):
 
     employees = StreamField([
         ('employee', blocks.StructBlock([
-            ('name', blocks.CharBlock()),
+            ('forename', blocks.CharBlock()),
+            ('surname', blocks.CharBlock()),
             ('job_title', blocks.CharBlock()),
-            ('telephone', blocks.CharBlock()),
+            ('telephone', blocks.CharBlock(required=False)),
             ('email', blocks.CharBlock()),
             ('image', ImageChooserBlock()),
         ])) 
