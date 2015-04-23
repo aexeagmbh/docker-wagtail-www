@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var animateElements = function(that) {
 
 
-		var icon1 = that.find('.arrow-icon-1>img');
+		var icon1 = that.find('.arrow-icon>img');
 
 		event.preventDefault();
 
@@ -48,14 +48,14 @@ $(document).ready(function() {
 		}
 
 		that.toggleClass("isDown");
-		return false;
+		
 
 	}
 	$(".employee").click(function() {
 		animateElements($(this));
 
-	})
-	$(".telephone, .email ").click(function(e) {
+	})	
+	$(".telephone, .email  .img").click(function(e) {
 		e.stopPropagation();
 	})
 
