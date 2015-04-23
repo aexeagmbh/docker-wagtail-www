@@ -10,11 +10,11 @@ $(document).ready(function() {
 		if (that.children().hasClass('telephone')) {
 
 			var elements = that.children(" .email , .telephone");
-			var offset = 9.3 + 4;
+			var offset = 10.7 + 4;
 		} else {
 			var elements = that.children(".email");
 			elements.css("background-color", "#DDDDDD")
-			var offset = 9.3 + 2;
+			var offset = 10.7 + 2;
 		}
 		elements.stop();
 		if (that.hasClass("isDown")) {
