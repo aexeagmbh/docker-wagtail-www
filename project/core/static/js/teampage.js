@@ -2,26 +2,22 @@ $(document).ready(function() {
 
 	var animateElements = function(that) {
 
-
 		var icon1 = that.find('.arrow-icon>img');
 
 		event.preventDefault();
-
-		if (that.children().hasClass('telephone')) {
-
-			var elements = that.children(" .email , .telephone");
-			var offset = 10.8 + 4;
-		} else {
-			var elements = that.children(".email");
-			elements.css("background-color", "#DDDDDD")
-			var offset = 10.8 + 2;
-		}
+		var elements= that.find('.contact-container');
+		var telephone= elements.children('.telephone');
+		 if (!(telephone.hasClass('telephone'))) {
+			var email=elements.children('.email');
+			email.css("background-color", "#DDDDDD");
+		 	}
+		
 		elements.stop();
 		if (that.hasClass("isDown")) {
 
 			elements = elements.map(function() {
 				return $(this).animate({
-					bottom: '7rem'
+					bottom: "-4rem",
 				}, 250)
 			})
 
@@ -38,9 +34,8 @@ $(document).ready(function() {
 			});
 
 			elements = elements.map(function() {
-				offset -= 2;
 				return $(this).animate({
-					bottom: offset + 'rem'
+					bottom: '0rem',
 
 				}, 250)
 			});
