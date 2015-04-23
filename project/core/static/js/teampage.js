@@ -4,39 +4,46 @@ $(document).ready(function() {
 
 
 		var icon1 = that.find('.arrow-icon-1>img');
-		var icon2 = that.find('.arrow-icon-2>img');
-		
+
 		event.preventDefault();
-		
+
 		if (that.children().hasClass('telephone')) {
 
 			var elements = that.children(" .email , .telephone");
-			var offset = 9.6 + 4;
+			var offset = 9.4 + 4;
 		} else {
 			var elements = that.children(".email");
 			elements.css("background-color", "#DDDDDD")
-			var offset = 9.6 + 2;
+			var offset = 9.4 + 2;
 		}
 		elements.stop();
 		if (that.hasClass("isDown")) {
 
 			elements = elements.map(function() {
 				return $(this).animate({
-					bottom: '7.3rem'
+					bottom: '7rem'
 				}, 250)
 			})
 
-			icon1.css('visibility', 'hidden');
-			icon2.css('visibility', 'visible');
+			icon1.css({
+				'-ms-transform': 'rotate(0deg)',
+				'-webkit-transform': 'rotate(0deg)',
+				'transform': 'rotate(0deg)'
+			});
 		} else {
-			icon1.css("visibility", "visible");
-			icon2.css("visibility", "hidden");
+		icon1.css({
+				'-ms-transform': 'rotate(-90deg)',
+				'-webkit-transform': 'rotate(-90deg)',
+				'transform': 'rotate(-90deg)'
+			});
+
 			elements = elements.map(function() {
 				offset -= 2;
 				return $(this).animate({
 					bottom: offset + 'rem'
 
-				}, 250) });
+				}, 250)
+			});
 
 		}
 
