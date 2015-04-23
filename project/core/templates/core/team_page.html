@@ -13,53 +13,48 @@
 							<div class="row">
 								<div class="large-1 columns"></div>
 								<div class="large-15 columns">
-
-									<div class="arrow-icon arrow-icon-1">
+									<div class="arrow-icon">
 										<img src=" {% static "img/chevron-right.svg" %}"
 									</div>
 									<br/>
 									{{block.value.forename}} <br/>
 									{{block.value.surname}}
-										<div class="jobtitle">
-											<div class="row">
-												<div class="large-1 columns"></div>
-												<div class="large-15 columns">{{block.value.job_title}}</div>
-											</div>
+									<div class="jobtitle">
+										<div class="row">
+											<div class="large-1 columns"></div>
+											<div class="large-15 columns">{{block.value.job_title}}</div>
 										</div>
-									<div class="arrow-icon arrow-icon-2">
-										<img  src=" {% static "img/chevron-right.svg" %}"
 									</div>
-								</div>
-							</li>
-							<li class="email">
-								<div class="row">
-									<div class="large-1 columns "></div>
-									<div class="large-15 columns">
-										<i class="contact-icon mail"></i>
-										<a href="mailto:{{block.value.email}}" >
-										{{block.value.email}}
-										</a>
+								</li>
+								<li class="email">
+									<div class="row">
+										<div class="large-1 columns "></div>
+										<div class="large-15 columns">
+											<i class="contact-icon mail"></i>
+											<a href="mailto:{{block.value.email}}" >
+												{{block.value.email}}
+											</a>
+										</div>
 									</div>
-								</div>
-							</li>
-							{%if block.value.telephone  %}
-							<li class="telephone">
-								<div class="row">
-									<div class="large-1 columns " ></div>
-									<div class="large-15 columns ">
-										<i class="contact-icon phone"></i>
-										<a href="tel:{{block.value.telephone}}" >
-										{{block.value.telephone}}
-										</a>
+								</li>
+								{%if block.value.telephone  %}
+								<li class="telephone">
+									<div class="row">
+										<div class="large-1 columns " ></div>
+										<div class="large-15 columns ">
+											<i class="contact-icon phone"></i>
+											<a href="tel:{{block.value.telephone}}" >
+												{{block.value.telephone}}
+											</a>
+										</div>
 									</div>
-								</div>
-							</li>
-							{%endif%}
-							
-						</ul>
-					</li>
-					<div class="last"></div>
-				{% endfor %}
-			</ul>
-		</div>
-	{% endblock main_content %}
+								</li>
+								{%endif%}
+								
+							</ul>
+						</li>
+						<div class="last"></div>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endblock main_content %}
