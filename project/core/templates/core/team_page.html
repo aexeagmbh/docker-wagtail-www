@@ -3,18 +3,46 @@
 {% block main_content %}
 	<div class="employees">
 		
-		<ul class="large-block-grid-5 medium-block-grid-4 small-block-grid-1">
+		<ul class="large-block-grid-5 medium-block-grid-3 small-block-grid-1">
 			{% for block in self.employees %}
 				<li>
-					<ul class="employee">
-						<li class="img"> {% image block.value.image  max-400x400  %} </li>
-						
-						<li class="name">
+					<div class="employee">
+						<div style="position: relative; overflow: hidden">
+						<div class="img"> {% image block.value.image  max-400x400  %}
+						<div class="contact-container">	
+							<div class="email">
+								<div class="row">
+									<div class="large-1 columns "></div>
+									<div class="large-15 columns">
+										<i class="contact-icon mail"></i>
+										<a href="mailto:{{block.value.email}}" >
+											{{block.value.email}}
+										</a>
+									</div>
+								</div>
+							</div>
+							{% if block.value.telephone %}
+							<div class="telephone">
+								<div class="row">
+									<div class="large-1 columns " ></div>
+									<div class="large-15 columns ">
+										<i class="contact-icon phone"></i>
+										<a href="tel:{{block.value.telephone}}" >
+											{{block.value.telephone}}
+										</a>
+									</div>
+								</div>
+							</div>
+							{% endif%}
+						</div>
+						</div>
+						</div>
+						<div class="name">
 							<div class="row">
 								<div class="large-1 columns"></div>
 								<div class="large-15 columns">
 									<div class="arrow-icon">
-										<img src=" {% static "img/chevron-right.svg" %}"
+										<img src=" {% static "img/chevron-right.svg" %}" >
 									</div>
 									<br/>
 									{{block.value.forename}} <br/>
@@ -25,35 +53,14 @@
 											<div class="large-15 columns">{{block.value.job_title}}</div>
 										</div>
 									</div>
-								</li>
-								<li class="email">
-									<div class="row">
-										<div class="large-1 columns "></div>
-										<div class="large-15 columns">
-											<i class="contact-icon mail"></i>
-											<a href="mailto:{{block.value.email}}" >
-												{{block.value.email}}
-											</a>
-										</div>
-									</div>
-								</li>
+								</div>
 								{%if block.value.telephone  %}
-								<li class="telephone">
-									<div class="row">
-										<div class="large-1 columns " ></div>
-										<div class="large-15 columns ">
-											<i class="contact-icon phone"></i>
-											<a href="tel:{{block.value.telephone}}" >
-												{{block.value.telephone}}
-											</a>
-										</div>
-									</div>
-								</li>
 								{%endif%}
 								
-							</ul>
-						</li>
-						<div class="last"></div>
+							</div>
+						</div>
+					</div>
+					</li>					
 					{% endfor %}
 				</ul>
 			</div>
