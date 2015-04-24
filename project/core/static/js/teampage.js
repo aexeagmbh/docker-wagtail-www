@@ -1,18 +1,19 @@
 $(document).ready(function() {
 
-	var emailHeight = $('.contact-container').map(function() {
+	var contactContainer = $('.contact-container');
+	contactContainer.map(function() {
 
-		return   ($(this).children(".email").outerHeight()>40)? $(this).addClass("has-break"): false;
+		return ($(this).children(".email").outerHeight()>40)? $(this).addClass("has-break"): false;
 	});
 
 
 	var animateElements = function(that) {
 
-		var icon1 = that.find('.arrow-icon>img');
-
 		event.preventDefault();
-		var elements = that.find('.contact-container');
-		var telephone = elements.children('.telephone');
+		var icon1 = that.find('.arrow-icon>img'),
+		elements = that.find('.contact-container'),
+		telephone = elements.children('.telephone');
+
 		if (!(telephone.hasClass('telephone'))) {
 			var email = elements.children('.email');
 			email.css("background-color", "#DDDDDD");
@@ -57,7 +58,7 @@ $(document).ready(function() {
 		animateElements($(this));
 
 	})
-	$(".telephone, .email  .img").click(function(e) {
+	contactContainer.click(function(e) {
 		e.stopPropagation();
 	})
 
