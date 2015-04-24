@@ -17,7 +17,7 @@ $(document).ready(function() {
 			var email = elements.children('.email');
 			email.css("background-color", "#DDDDDD");
 		}
-		var animateTo= elements.hasClass('.has-break') ? '-4rem' : '-6rem';
+		var animateTo= elements.hasClass('.has-break') ? '-5rem' : '-8rem';
 
 		elements.stop();
 		if (that.hasClass("isDown")) {
