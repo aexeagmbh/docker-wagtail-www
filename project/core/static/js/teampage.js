@@ -1,23 +1,30 @@
 $(document).ready(function() {
 
+	var emailHeight = $('.contact-container').map(function() {
+
+		return   ($(this).children(".email").outerHeight()>40)? $(this).addClass("has-break"): false;
+	});
+
+
 	var animateElements = function(that) {
 
 		var icon1 = that.find('.arrow-icon>img');
 
 		event.preventDefault();
-		var elements= that.find('.contact-container');
-		var telephone= elements.children('.telephone');
-		 if (!(telephone.hasClass('telephone'))) {
-			var email=elements.children('.email');
+		var elements = that.find('.contact-container');
+		var telephone = elements.children('.telephone');
+		if (!(telephone.hasClass('telephone'))) {
+			var email = elements.children('.email');
 			email.css("background-color", "#DDDDDD");
-		 	}
-		
+		}
+		var animateTo= elements.hasClass('.has-break') ? '-5rem' : '-8rem';
+
 		elements.stop();
 		if (that.hasClass("isDown")) {
 
 			elements = elements.map(function() {
 				return $(this).animate({
-					bottom: "-4rem",
+					bottom: animateTo ,
 				}, 250)
 			})
 
@@ -27,7 +34,7 @@ $(document).ready(function() {
 				'transform': 'rotate(0deg)'
 			});
 		} else {
-		icon1.css({
+			icon1.css({
 				'-ms-transform': 'rotate(-90deg)',
 				'-webkit-transform': 'rotate(-90deg)',
 				'transform': 'rotate(-90deg)'
@@ -43,13 +50,13 @@ $(document).ready(function() {
 		}
 
 		that.toggleClass("isDown");
-		
+
 
 	}
 	$(".employee").click(function() {
 		animateElements($(this));
 
-	})	
+	})
 	$(".telephone, .email  .img").click(function(e) {
 		e.stopPropagation();
 	})
