@@ -23,6 +23,7 @@ AX_BASE_FIELDS = [
             FieldPanel('footer_text', classname="full"),
         ],
         heading='Footer elements', classname="collapsible collapsed"),
+
 ]
 
 
@@ -56,6 +57,8 @@ class HomePage(Page):
     block1_conversion_title = models.CharField(max_length=512, blank=True)
     block1_conversion_url = models.URLField(blank=True)
     block1_conversion_button_label = models.CharField(max_length=512, blank=True)
+    activate_olark = models.BooleanField(default=False)
+
 
     block2_title = models.CharField(max_length=512, blank=True)
     block2_content1 = RichTextField(blank=True)
@@ -129,6 +132,7 @@ HOME_BLOCK1_FIELDS = [
     FieldPanel('block1_conversion_title', classname="full"),
     FieldPanel('block1_conversion_url', classname="full"),
     FieldPanel('block1_conversion_button_label', classname="full"),
+
 ]
 
 HOME_BLOCK2_FIELDS = [
@@ -153,6 +157,7 @@ HOME_BLOCK3_FIELDS = [
 HOME_BLOCK_SIGNUP_FIELDS = [
     FieldPanel('block_signup_title', classname="full"),
     FieldPanel('block_signup_button_label', classname="full"),
+    FieldPanel('activate_olark', classname="full"),
 ]
 
 HOME_BLOCK4_FIELDS = [
@@ -195,6 +200,7 @@ class OneColumnMainPage(Page):
     conversion_title = models.CharField(max_length=256, blank=True)
     conversion_url = models.URLField(blank=True)
     conversion_button_label = models.CharField(max_length=256, blank=True)
+    activate_olark = models.BooleanField(default=False)
     foot_row = RichTextField(blank=True)
 
 
@@ -207,6 +213,7 @@ OneColumnMainPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('conversion_title', classname="full"),
     FieldPanel('conversion_url', classname="full"),
     FieldPanel('conversion_button_label', classname="full"),
+    FieldPanel('activate_olark', classname="full"),
     FieldPanel('foot_row', classname="full"),
 ]
 
@@ -229,6 +236,7 @@ class TwoColumnMainPage(Page):
     conversion_title = models.CharField(max_length=256, blank=True)
     conversion_url = models.URLField(blank=True)
     conversion_button_label = models.CharField(max_length=256, blank=True)
+    activate_olark = models.BooleanField(default=False)
     foot_row = RichTextField(blank=True)
 
 
@@ -240,6 +248,7 @@ TwoColumnMainPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('conversion_title', classname="full"),
     FieldPanel('conversion_url', classname="full"),
     FieldPanel('conversion_button_label', classname="full"),
+    FieldPanel('activate_olark', classname="full"),
     FieldPanel('foot_row', classname="full"),
 ]
 
@@ -255,7 +264,6 @@ class ProductPage(Page):
         related_name='+'
     )
     footer_text = RichTextField(blank=True)
-
     block1_thumbnail = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -270,6 +278,7 @@ class ProductPage(Page):
     conversion_title = models.CharField(max_length=256, blank=True)
     conversion_url = models.URLField(blank=True)
     conversion_button_label = models.CharField(max_length=256, blank=True)
+    activate_olark = models.BooleanField(default=False)
     foot_row = RichTextField(blank=True)
 
 
@@ -283,6 +292,7 @@ ProductPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('conversion_title', classname="full"),
     FieldPanel('conversion_url', classname="full"),
     FieldPanel('conversion_button_label', classname="full"),
+    FieldPanel('activate_olark', classname="full"),
     FieldPanel('foot_row', classname="full"),
 ]
 
