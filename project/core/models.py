@@ -16,6 +16,7 @@ AX_BASE_FIELDS = [
             FieldPanel('header_title', classname="full"),
             FieldPanel('header_slogan', classname="full"),
             ImageChooserPanel('header_img'),
+            FieldPanel('hide_navigation', classname="full"),
         ],
         heading='Header elements', classname="collapsible collapsed"),
     MultiFieldPanel(
@@ -37,6 +38,7 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    hide_navigation = models.BooleanField(default=False)
     footer_text = RichTextField(blank=True)
 
     block1_title = models.CharField(max_length=512, blank=True)
@@ -191,6 +193,8 @@ class OneColumnMainPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+
+    hide_navigation = models.BooleanField(default=False)
     footer_text = RichTextField(blank=True)
 
     row1_teaser1 = RichTextField(blank=True)
@@ -228,6 +232,8 @@ class TwoColumnMainPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+
+    hide_navigation = models.BooleanField(default=False)
     footer_text = RichTextField(blank=True)
 
     teaser = RichTextField(blank=True)
@@ -263,6 +269,7 @@ class ProductPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    hide_navigation = models.BooleanField(default=False)
     footer_text = RichTextField(blank=True)
     block1_thumbnail = models.ForeignKey(
         'wagtailimages.Image',
@@ -307,6 +314,7 @@ class TeamPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    hide_navigation = models.BooleanField(default=False)
     footer_text = RichTextField(blank=True)
 
     employees = StreamField([
