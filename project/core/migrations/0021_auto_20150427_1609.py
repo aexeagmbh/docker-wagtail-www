@@ -18,8 +18,20 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AddField(
+            model_name='homepage',
+            name='hide_navigation',
+            field=models.BooleanField(default=False),
+            preserve_default=True,
+        ),
+        migrations.AddField(
             model_name='onecolumnmainpage',
             name='activate_olark',
+            field=models.BooleanField(default=False),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='onecolumnmainpage',
+            name='hide_navigation',
             field=models.BooleanField(default=False),
             preserve_default=True,
         ),
@@ -30,8 +42,26 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AddField(
+            model_name='productpage',
+            name='hide_navigation',
+            field=models.BooleanField(default=False),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='teampage',
+            name='hide_navigation',
+            field=models.BooleanField(default=False),
+            preserve_default=True,
+        ),
+        migrations.AddField(
             model_name='twocolumnmainpage',
             name='activate_olark',
+            field=models.BooleanField(default=False),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='twocolumnmainpage',
+            name='hide_navigation',
             field=models.BooleanField(default=False),
             preserve_default=True,
         ),
