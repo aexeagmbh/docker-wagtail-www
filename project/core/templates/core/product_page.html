@@ -39,7 +39,12 @@
             <div class="row">
                 <div class="large-12 columns">
                     <h3>{{ self.conversion_title }}</h3>
-                    <a class="button bigger" href="{{ self.conversion_url }}">{{ self.conversion_button_label }}</a>
+                    {% if self.activate_olark %}
+                        <a class="button bigger" href="javascript:void(0);" onclick="olark('api.box.expand')">
+                        {{ self.conversion_button_label }}</a>
+                    {% else %}
+                        <a class="button bigger" href="{{ self.conversion_url }}"> {{ self.conversion_button_label }}</a>
+                    {% endif %}
                 </div>
             </div>
         </section>

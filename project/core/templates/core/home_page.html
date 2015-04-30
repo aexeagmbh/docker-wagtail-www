@@ -101,7 +101,12 @@
         <div class="row">
             <div class="large-12 columns">
                 <h2>{{ self.block_signup_title }}</h2>
-                <a class="button" href="https://my.ax-semantics.com/accounts/signup/">{{ self.block_signup_button_label }}</a>
+                {% if self.activate_olark %}
+                    <a class="button " href="javascript:void(0);" onclick="olark('api.box.expand')">
+                    {{ self.conversion_button_label }}</a>
+                {% else %}
+                    <a class="button " href="{{ self.conversion_url }}"> {{ self.conversion_button_label }}</a>
+                {% endif %}
             </div>
         </div>
     </section>
