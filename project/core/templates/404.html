@@ -1,40 +1,18 @@
 {% extends "core/base.html" %}
-{% load  static  %}
+{% load  static  compress  %}
 {% block main_content %}
     <div class="page-404">
-
         <h3 class="header-404" >404</h3>
         <div class="robot">
             <div class="bubble">
                 <p id="robot-says"></p>
             </div>
             <div class="axel"><img  src=" {% static "img/Axel.svg" %}" / >
+            </div>
         </div>
-        </div>
-
     </div>
-<script type="text/javascript">
 
-
-    function RobotTypes (robotSaysparam) {
-        (function robotWriter (i) {
-            i++;
-            var robotSaysText = "Sorry could not generate this content :(";
-            robotSaysparam.innerHTML = robotSaysText.substring(0,i);
-            var rand = Math.floor(Math.random()*(50)+50);
-
-            if (80>=i){ 
-            setTimeout(function(){robotWriter(i); }, rand ) 
-        }
-            else
-            {
-                return;
-            }
-        })(0)
-
-    }
-
-    RobotTypes(document.getElementById("robot-says"));
-</script>
-
+    {% compress js %}
+    <script type="text/javascript" src="{% static  "js/404.js" %}"></script>
+    {% endcompress %}
 {% endblock %}
