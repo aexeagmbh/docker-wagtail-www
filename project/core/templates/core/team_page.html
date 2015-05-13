@@ -8,50 +8,44 @@
 				<li>
 					<div class="employee">
 						<div style="position: relative; overflow: hidden">
-						<div class="img"> {% image block.value.image  fill-200x147 %}
-						<div class="contact-container">	
-							<div class="email">
-								<div class="row">
-									<div class="large-1 columns "></div>
-									<div class="large-15 columns">
-										<i class="contact-icon mail"></i>
-										<a href="mailto:{{block.value.email}}" >
-											{{block.value.email}}
-										</a>
+							<div class="img"> {% image block.value.image  fill-200x147 %}
+								<div class="contact-container">
+									<div class="email">
+										<div class="row">
+											<div class="large-offset-1 columns "></div>
+											<i class="contact-icon mail"></i>
+											<a href="mailto:{{block.value.email}}" >
+												{{block.value.email}}
+											</a>
+										</div>
 									</div>
+									{% if block.value.telephone %}
+										<div class="telephone">
+											<div class="row">
+												<div class="large-offset-1 columns " ></div>
+												<i class="contact-icon phone"></i>
+												<a href="tel:{{block.value.telephone}}" >
+													{{block.value.telephone}}
+												</a>
+											</div>
+										</div>
+									{% endif%}
 								</div>
 							</div>
-							{% if block.value.telephone %}
-							<div class="telephone">
-								<div class="row">
-									<div class="large-1 columns " ></div>
-									<div class="large-15 columns ">
-										<i class="contact-icon phone"></i>
-										<a href="tel:{{block.value.telephone}}" >
-											{{block.value.telephone}}
-										</a>
-									</div>
-								</div>
-							</div>
-							{% endif%}
-						</div>
-						</div>
 						</div>
 						<div class="name">
 							<div class="row">
-								<div class="large-1 columns"></div>
-								<div class="large-15 columns">
-									<div class="arrow-icon">
-										<img src=" {% static "img/chevron-right.svg" %}" >
-									</div>
-									
-									{{block.value.forename}} <br/>
-									{{block.value.surname}}
-									<div class="jobtitle">
-										<div class="row">
-											<div class="large-1 columns"></div>
-											<div class="large-15 columns">{{block.value.job_title}}</div>
-										</div>
+								<div class="large-offset-1 columns"></div>
+								<div class="arrow-icon">
+									<img src=" {% static "img/chevron-right.svg" %}" >
+								</div>
+								
+								{{block.value.forename}} <br/>
+								{{block.value.surname}}
+								<div class="jobtitle">
+									<div class="row">
+										<div class="large-offset-1 columns"></div>
+										<div class="large-offset-15 columns">{{block.value.job_title}}</div>
 									</div>
 								</div>
 								{%if block.value.telephone  %}
@@ -60,8 +54,8 @@
 							</div>
 						</div>
 					</div>
-					</li>					
-					{% endfor %}
-				</ul>
-			</div>
-		{% endblock main_content %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock main_content %}

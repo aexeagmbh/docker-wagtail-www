@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	'use strict';
 	(function($) {
+		
 		var $contactContainers = $('.employees').find('.contact-container');
 
 		console.log($contactContainers);
@@ -10,7 +11,6 @@ $(document).ready(function() {
 			console.log(lineHeight);
 			lineHeight = lineHeight.substring(0,5);
 			lineHeight= parseFloat(lineHeight);
-			console.log($this.height() > lineHeight );
 			$this.height() > lineHeight ? $(this).addClass("has-break") : false;
 		});
 		var animateElements = function(self) {
@@ -38,7 +38,8 @@ $(document).ready(function() {
 					'-webkit-transform': 'rotate(0deg)',
 					'transform': 'rotate(0deg)'
 				});
-			} else {
+			} 
+			else {
 				icon.css({
 					'-ms-transform': 'rotate(-90deg)',
 					'-webkit-transform': 'rotate(-90deg)',
