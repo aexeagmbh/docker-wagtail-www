@@ -1,66 +1,67 @@
 $(document).ready(function() {
+	'use strict';
+	(function($) {
+		var $contactContainers = $('.employees').find('.contact-container');
 
-	var contactContainer = $('.contact-container');
-	contactContainer.map(function() {
+		console.log($contactContainers);
+		$.each($contactContainers, function() {
+			var $this = $(this).children(".email");
+			var lineHeight = $this.css('line-height');
+			console.log(lineHeight);
+			lineHeight = lineHeight.substring(0,5);
+			lineHeight= parseFloat(lineHeight);
+			console.log($this.height() > lineHeight );
+			$this.height() > lineHeight ? $(this).addClass("has-break") : false;
+		});
+		var animateElements = function(self) {
 
-		return ($(this).children(".email").outerHeight()>40)? $(this).addClass("has-break"): false;
-	});
+			var icon = self.find('.arrow-icon>img'),
+				elements = self.find('.contact-container'),
+				telephone = elements.children('.telephone');
 
+			if (!(telephone.hasClass('telephone'))) {
+				var email = elements.children('.email');
+				//
+				email.css("background-color", "#DDDDDD");
+			}
+			var animateTo = elements.hasClass('.has-break') ? '-5rem' : '-8rem';
 
-	var animateElements = function(that) {
+			elements.stop();
+			if (self.hasClass("isDown")) {
+				$.each(elements, function() {
+					return $(this).animate({
+						bottom: animateTo,
+					}, 250);
+				});
+				icon.css({
+					'-ms-transform': 'rotate(0deg)',
+					'-webkit-transform': 'rotate(0deg)',
+					'transform': 'rotate(0deg)'
+				});
+			} else {
+				icon.css({
+					'-ms-transform': 'rotate(-90deg)',
+					'-webkit-transform': 'rotate(-90deg)',
+					'transform': 'rotate(-90deg)'
+				});
+				$.each(elements, function() {
+					return $(this).animate({
+						bottom: 0,
+					}, 250);
+				});
 
-		event.preventDefault();
-		var icon1 = that.find('.arrow-icon>img'),
-		elements = that.find('.contact-container'),
-		telephone = elements.children('.telephone');
-
-		if (!(telephone.hasClass('telephone'))) {
-			var email = elements.children('.email');
-			email.css("background-color", "#DDDDDD");
-		}
-		var animateTo= elements.hasClass('.has-break') ? '-5rem' : '-8rem';
-
-		elements.stop();
-		if (that.hasClass("isDown")) {
-
-			elements = elements.map(function() {
-				return $(this).animate({
-					bottom: animateTo ,
-				}, 250)
-			})
-
-			icon1.css({
-				'-ms-transform': 'rotate(0deg)',
-				'-webkit-transform': 'rotate(0deg)',
-				'transform': 'rotate(0deg)'
-			});
-		} else {
-			icon1.css({
-				'-ms-transform': 'rotate(-90deg)',
-				'-webkit-transform': 'rotate(-90deg)',
-				'transform': 'rotate(-90deg)'
-			});
-
-			elements = elements.map(function() {
-				return $(this).animate({
-					bottom: '0rem',
-
-				}, 250)
-			});
-
-		}
-
-		that.toggleClass("isDown");
-
-
-	}
-	$(".employee").click(function() {
-		animateElements($(this));
-
-	})
-	contactContainer.click(function(e) {
-		e.stopPropagation();
-	})
+			}
+			self.toggleClass("isDown");
 
 
+		};
+		$(".employee").click(function() {
+			animateElements($(this));
+
+		});
+		$contactContainers.click(function(e) {
+			e.stopPropagation();
+		});
+
+	})(jQuery);
 });
