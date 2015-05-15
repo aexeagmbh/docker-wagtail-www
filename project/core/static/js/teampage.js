@@ -1,18 +1,18 @@
 $(document).ready(function() {
 	'use strict';
 	(function($) {
-		
+
 		var $contactContainers = $('.employees').find('.contact-container');
 
-		console.log($contactContainers);
 		$.each($contactContainers, function() {
+
 			var $this = $(this).children(".email");
 			var lineHeight = $this.css('line-height');
-			console.log(lineHeight);
-			lineHeight = lineHeight.substring(0,5);
-			lineHeight= parseFloat(lineHeight);
-			$this.height() > lineHeight ? $(this).addClass("has-break") : false;
+			lineHeight = lineHeight.substring(0, 5);
+			lineHeight = parseFloat(lineHeight);
+			parseInt($this.height()) > lineHeight ? $(this).addClass("has-break") : false;
 		});
+		
 		var animateElements = function(self) {
 
 			var icon = self.find('.arrow-icon>img'),
