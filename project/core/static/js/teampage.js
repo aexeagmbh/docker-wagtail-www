@@ -12,21 +12,22 @@ $(document).ready(function() {
 			lineHeight = parseFloat(lineHeight);
 			parseInt($this.height()) > lineHeight ? $(this).addClass("has-break") : false;
 		});
-		
+
 		var animateElements = function(self) {
 
 			var icon = self.find('.arrow-icon>img'),
 				elements = self.find('.contact-container'),
 				telephone = elements.children('.telephone');
-
+				//set other background if no telephone to maintain odd even coloring  
 			if (!(telephone.hasClass('telephone'))) {
 				var email = elements.children('.email');
-				//
 				email.css("background-color", "#DDDDDD");
 			}
+
 			var animateTo = elements.hasClass('.has-break') ? '-5rem' : '-8rem';
 
 			elements.stop();
+			
 			if (self.hasClass("isDown")) {
 				$.each(elements, function() {
 					return $(this).animate({
