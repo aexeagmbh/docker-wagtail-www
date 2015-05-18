@@ -1,0 +1,77 @@
+{% extends "core/base.html" %} {% load wagtailcore_tags wagtailimages_tags static %} {% block main_content %} {% for block in self.metapages %} 
+{% if block.block_type == 'whitetwocolumns'%}
+<p> {{ block.block_type }} </p>
+<section>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>{{ block.value.block1title }}</h2>
+            <p class="subline">{{ block.value.block1subline }}</p>
+            {{ block.value.block1subtitle |richtext }}
+            <ul class="medium-block-grid-2 large-block-grid-2">
+                <li>
+                    {{ block.value.block1content1|richtext }}
+                    <a href="{{ block.value.block1button1url }}" class="button">{{ block.value.block1button1label }}</a>
+                </li>
+                <li>
+                    {{ block.value.block1content2|richtext }}
+                    <a href="{{ block.value.block1button2url }}" class="button">{{ block.value.block1button2label }}</a>
+                </li>
+                <li>
+                    {{ block.value.block1content3|richtext }}
+                    <a href="{{ block.value.block1button3url }}" class="button">{{ block.value.block1button3label }}</a>
+                </li>
+                <li>
+                    {{ block.value.block1content4|richtext }}
+                    <a href="{{ block.value.block1button4url }}" class="button">{{ block.value.block1button4label }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if block.block_type == 'imagecolumns' %}
+<p>{{block.block_type}}</p>
+<section>
+    <div class="row">
+        <div class="large-12 columns">
+            <ul class="medium-block-grid-1 large-block-grid-2">
+                <li>
+                    <div class="m-quote">
+                        {% image self.block3_thumbnail1 fill-170x170 class="quote-image" %}
+                        <blockquote>
+                            {{ self.block3_content1|richtext }}
+                        </blockquote>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-quote">
+                        {% image self.block3_thumbnail2 fill-170x170 class="quote-image" %}
+                        <blockquote>
+                            {{ self.block3_content2|richtext }}
+                        </blockquote>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-quote">
+                        {% image self.block3_thumbnail3 fill-170x170 class="quote-image" %}
+                        <blockquote>
+                            {{ self.block3_content3|richtext }}
+                        </blockquote>
+                    </div>
+                </li>
+                <li>
+                    <div class="m-quote">
+                        {% image self.block3_thumbnail4 fill-170x170 class="quote-image" %}
+                        <blockquote>
+                            {{ self.block3_content4|richtext }}
+                        </blockquote>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %} 
+{% endfor %}
+ {% endblock main_content %}
