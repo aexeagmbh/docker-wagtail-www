@@ -332,3 +332,39 @@ TeamPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('title', classname="full title"),
     StreamFieldPanel('employees')
 ]
+
+class MetaPage(Page):
+    header_title = models.CharField(max_length=512, blank=True)
+    header_slogan = models.CharField(max_length=512, blank=True)
+    header_img = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    hide_navigation = models.BooleanField(default=False)
+    footer_text = RichTextField(blank=True)
+    
+    metapages = StreamField([
+        ('whitetwocolumns', blocks.StructBlock([ 
+            ('block1title', blocks.TextBlock()),
+            ('block1subline', blocks.TextBlock())         
+            ])) ,
+        
+        # ('' , blocks.StructBlock([
+
+        #     ])),   
+        
+        ('imagecolumns' , blocks.StructBlock([
+            ('block3content', blocks.TextBlock()),
+            ('block3thumbnail1', ImageChooserBlock())            
+        ])),  
+        
+
+        ], null=True, blank=True)    
+
+MetaPage.content_panels = AX_BASE_FIELDS + [
+    FieldPanel('title', classname="full title"),
+    StreamFieldPanel('metapages')
+]
