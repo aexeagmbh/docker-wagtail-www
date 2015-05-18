@@ -347,9 +347,22 @@ class MetaPage(Page):
     footer_text = RichTextField(blank=True)
     
     metapages = StreamField([
-        ('whitetwocolumns', blocks.StructBlock([ 
-            ('block1title', blocks.TextBlock()),
-            ('block1subline', blocks.TextBlock())         
+        ('white_two_columns', blocks.StructBlock([ 
+            ('block1_title', blocks.TextBlock()),
+            ('block1_subline', blocks.RichTextBlock()),
+            ('block1_subtitle', blocks.RichTextBlock()),
+            ('block1_content1', blocks.RichTextBlock()),
+            ('block1_button1_url', blocks.URLBlock()),
+            ('block1_button1_label', blocks.CharBlock()),     
+            ('block1_content2', blocks.RichTextBlock()),
+            ('block1_button2_url', blocks.URLBlock()),
+            ('block1_button2_label', blocks.CharBlock()),     
+            ('block1_content3', blocks.RichTextBlock()),
+            ('block1_button3_url', blocks.URLBlock()),
+            ('block1_button3_label', blocks.CharBlock()),     
+            ('block1_content4', blocks.RichTextBlock()),
+            ('block1_button4_url', blocks.URLBlock()),
+            ('block1_button4_label', blocks.CharBlock())     
             ])) ,
         
         # ('' , blocks.StructBlock([
