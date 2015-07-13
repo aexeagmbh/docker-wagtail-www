@@ -97,16 +97,12 @@
             </div>
         </div>
     </section>
+    {
     <section class="action-bar">
         <div class="row">
             <div class="large-12 columns">
-                <h2>{{ self.block_signup_title }}</h2>
-                {% if self.activate_olark %}
-                    <a class="button " href="javascript:void(0);" onclick="olark('api.box.expand')">
-                    {{ self.conversion_button_label }}</a>
-                {% else %}
-                    <a class="button " href="{{ self.conversion_url }}"> {{ self.conversion_button_label }}</a>
-                {% endif %}
+                <h2>{{ self.block_conversion_title }}</h2>
+                <a class="button " href="{{ self.block_conversion_button_url }}">{{ self.block_conversion_button_label }}</a>
             </div>
         </div>
     </section>

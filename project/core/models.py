@@ -59,8 +59,6 @@ class HomePage(Page):
     block1_conversion_title = models.CharField(max_length=512, blank=True)
     block1_conversion_url = models.URLField(blank=True)
     block1_conversion_button_label = models.CharField(max_length=512, blank=True)
-    activate_olark = models.BooleanField(default=False)
-
 
     block2_title = models.CharField(max_length=512, blank=True)
     block2_content1 = RichTextField(blank=True)
@@ -101,8 +99,9 @@ class HomePage(Page):
         related_name='+'
     )
 
-    block_signup_title = models.CharField(max_length=512, blank=True)
-    block_signup_button_label = models.CharField(max_length=128, blank=True)
+    block_conversion_title = models.CharField(max_length=512, blank=True)
+    block_conversion_button_label = models.CharField(max_length=128, blank=True)
+    block_conversion_button_url = models.URLField(max_length=128, blank=True)
 
     block4_content1 = RichTextField(blank=True)
     block4_content2 = RichTextField(blank=True)
@@ -157,9 +156,10 @@ HOME_BLOCK3_FIELDS = [
 ]
 
 HOME_BLOCK_SIGNUP_FIELDS = [
-    FieldPanel('block_signup_title', classname="full"),
-    FieldPanel('block_signup_button_label', classname="full"),
-    FieldPanel('activate_olark', classname="full"),
+    FieldPanel('block_conversion_title', classname="full"),
+    FieldPanel('block_conversion_button_label', classname="full"),
+    FieldPanel('block_conversion_button_url', classname="full"),
+
 ]
 
 HOME_BLOCK4_FIELDS = [
@@ -325,7 +325,7 @@ class TeamPage(Page):
             ('telephone', blocks.CharBlock(required=False)),
             ('email', blocks.CharBlock()),
             ('image', ImageChooserBlock()),
-        ])) 
+        ]))
     ], null=True, blank=True)
 
 TeamPage.content_panels = AX_BASE_FIELDS + [
