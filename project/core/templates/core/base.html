@@ -26,6 +26,13 @@
         <header role="banner">
             <section>
                 <div class="row">
+                    <div class="large-12 columns text-right">
+                        <a style="margin:0.5rem" href="https://www.ax-semantics.com/"><img src="{% static 'img/flags/16/US.png' %}" /></a>
+                        <a style="margin:0.5rem" href="https://www.ax-semantics.de/"><img src="{% static 'img/flags/16/DE.png' %}" /></a>
+                        <a style="margin:0.5rem" href="https://www.ax-semantics.net/"><img src="{% static 'img/flags/16/ES.png' %}" /></a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="large-12 columns">
                         {%if self.hide_navigation %}
                         {% get_site_root as site_root %}
@@ -103,14 +110,6 @@
                                         <a href="https://my.ax-semantics.com/#/account/sign-up">
                                             Sign up
                                         </a>
-                                    </li>
-                                    <li class="has-dropdown left">
-                                        <a href="#">Language</a>
-                                        <ul class="dropdown">
-                                            <li style="margin-left:0"><a href="https://www.ax-semantics.com/"><img src="{% static 'img/flags/16/US.png' %}" /> english</a></li>
-                                            <li style="margin-left:0"><a href="https://www.ax-semantics.de/"><img src="{% static 'img/flags/16/DE.png' %}" /> deutsch</a></li>
-                                            <li style="margin-left:0"><a href="https://www.ax-semantics.net/"><img src="{% static 'img/flags/16/ES.png' %}" /> español</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
