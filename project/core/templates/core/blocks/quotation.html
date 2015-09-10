@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="row">
+    <div class="large-12 columns">
+        <div class="m-quote">
+            {% image self.image fill-170x170 class="quote-image" %}
+            <blockquote>
+                <p>“{{ self.text|linebreaksbr }}”</p>
+                <p>{{ self.name }}</p>
+            </blockquote>
+        </div>
+    </div>
+</div>

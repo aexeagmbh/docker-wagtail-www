@@ -381,6 +381,11 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
             ('headline', blocks.CharBlock(required=True)),
             ('content', blocks.RichTextBlock(required=True)),
         ], template='core/blocks/teaser_area.html')),
+        ('quotation', blocks.StructBlock([
+            ('image', ImageChooserBlock(required=True)),
+            ('text', blocks.TextBlock(required=True)),
+            ('name', blocks.CharBlock(required=True)),
+        ], template='core/blocks/quotation.html')),
         ('one_column_text', blocks.StructBlock([
             ('content', blocks.RichTextBlock(required=True)),
         ], template='core/blocks/one_column_text.html')),
