@@ -1,5 +1,6 @@
 web:
   build: .
+  user: uid1000
   links:
    - db
    - redis

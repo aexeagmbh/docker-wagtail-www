@@ -7,7 +7,6 @@ from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.blocks import StructBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 AX_BASE_FIELDS = [
@@ -332,3 +331,88 @@ TeamPage.content_panels = AX_BASE_FIELDS + [
     FieldPanel('title', classname="full title"),
     StreamFieldPanel('employees')
 ]
+
+
+class BaseFieldsMixin(models.Model):
+    header_title = models.CharField(max_length=512, blank=True)
+    header_slogan = models.CharField(max_length=512, blank=True)
+    header_img = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    hide_navigation = models.BooleanField(default=False)
+    footer_text = RichTextField(blank=True)
+
+    settings_panels = [
+        MultiFieldPanel([
+            FieldPanel('hide_navigation'),
+        ] + Page.settings_panels, "Page settings"),
+    ]
+
+    content_panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel('header_title', classname="full"),
+                FieldPanel('header_slogan', classname="full"),
+                ImageChooserPanel('header_img'),
+            ],
+            heading='Header elements', classname="collapsible collapsed"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel('footer_text', classname="full"),
+            ],
+            heading='Footer elements', classname="collapsible collapsed"
+        ),
+        FieldPanel('title', classname="full title"),
+
+    ]
+
+    class Meta:
+        abstract = True
+
+
+class UniversalStreamPage(Page, BaseFieldsMixin):
+    content = StreamField([
+        ('teaser_area', blocks.StructBlock([
+            ('headline', blocks.CharBlock(required=True)),
+            ('content', blocks.RichTextBlock(required=True)),
+        ], template='core/blocks/teaser_area.html')),
+        ('quotation', blocks.StructBlock([
+            ('image', ImageChooserBlock(required=True)),
+            ('text', blocks.TextBlock(required=True)),
+            ('name', blocks.CharBlock(required=True)),
+        ], template='core/blocks/quotation.html')),
+        ('one_column_text', blocks.StructBlock([
+            ('content', blocks.RichTextBlock(required=True)),
+        ], template='core/blocks/one_column_text.html')),
+        ('two_column_50_50_text', blocks.StructBlock([
+            ('left_content', blocks.RichTextBlock(required=True)),
+            ('right_content', blocks.RichTextBlock(required=True)),
+        ], template='core/blocks/two_column_50_50_text.html')),
+        ('two_column_66_33_text', blocks.StructBlock([
+            ('left_content', blocks.RichTextBlock(required=True)),
+            ('right_content', blocks.RichTextBlock(required=True)),
+        ], template='core/blocks/two_column_66_33_text.html')),
+        ('three_column_33_33_33_text', blocks.StructBlock([
+            ('left_content', blocks.RichTextBlock(required=True)),
+            ('center_content', blocks.RichTextBlock(required=True)),
+            ('right_content', blocks.RichTextBlock(required=True)),
+        ], template='core/blocks/three_column_33_33_33_text.html')),
+        ('call_to_action_area', blocks.StructBlock([
+            ('title', blocks.CharBlock(required=True)),
+            ('button_label', blocks.CharBlock(required=True)),
+            ('button_link', blocks.URLBlock(required=True)),
+        ], template='core/blocks/call_to_action_area.html')),
+        ('raw_html', blocks.StructBlock([
+            ('html', blocks.RawHTMLBlock(required=True)),
+        ], template='core/blocks/raw_html.html')),
+    ])
+
+    settings_panels = BaseFieldsMixin.settings_panels
+    content_panels = BaseFieldsMixin.content_panels + [
+        StreamFieldPanel('content'),
+    ]
