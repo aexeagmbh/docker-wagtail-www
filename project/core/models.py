@@ -378,37 +378,44 @@ class BaseFieldsMixin(models.Model):
 class UniversalStreamPage(Page, BaseFieldsMixin):
     content = StreamField([
         ('teaser_area', blocks.StructBlock([
-            ('headline', blocks.CharBlock(required=True)),
-            ('content', blocks.RichTextBlock(required=True)),
+            ('headline', blocks.CharBlock()),
+            ('content', blocks.RichTextBlock()),
         ], template='core/blocks/teaser_area.html')),
+
         ('quotation', blocks.StructBlock([
-            ('image', ImageChooserBlock(required=True)),
-            ('text', blocks.TextBlock(required=True)),
-            ('name', blocks.CharBlock(required=True)),
+            ('image', ImageChooserBlock()),
+            ('text', blocks.TextBlock(help_text="quotation marks (“...”) will be added automatically")),
+            ('name', blocks.CharBlock()),
         ], template='core/blocks/quotation.html')),
+
         ('one_column_text', blocks.StructBlock([
-            ('content', blocks.RichTextBlock(required=True)),
+            ('content', blocks.RichTextBlock()),
         ], template='core/blocks/one_column_text.html')),
+
         ('two_column_50_50_text', blocks.StructBlock([
-            ('left_content', blocks.RichTextBlock(required=True)),
-            ('right_content', blocks.RichTextBlock(required=True)),
+            ('left_content', blocks.RichTextBlock()),
+            ('right_content', blocks.RichTextBlock()),
         ], template='core/blocks/two_column_50_50_text.html')),
+
         ('two_column_66_33_text', blocks.StructBlock([
-            ('left_content', blocks.RichTextBlock(required=True)),
-            ('right_content', blocks.RichTextBlock(required=True)),
+            ('left_content', blocks.RichTextBlock()),
+            ('right_content', blocks.RichTextBlock()),
         ], template='core/blocks/two_column_66_33_text.html')),
+
         ('three_column_33_33_33_text', blocks.StructBlock([
-            ('left_content', blocks.RichTextBlock(required=True)),
-            ('center_content', blocks.RichTextBlock(required=True)),
-            ('right_content', blocks.RichTextBlock(required=True)),
+            ('left_content', blocks.RichTextBlock()),
+            ('center_content', blocks.RichTextBlock()),
+            ('right_content', blocks.RichTextBlock()),
         ], template='core/blocks/three_column_33_33_33_text.html')),
+
         ('call_to_action_area', blocks.StructBlock([
-            ('title', blocks.CharBlock(required=True)),
-            ('button_label', blocks.CharBlock(required=True)),
-            ('button_link', blocks.URLBlock(required=True)),
+            ('title', blocks.CharBlock()),
+            ('button_label', blocks.CharBlock()),
+            ('button_link', blocks.URLBlock()),
         ], template='core/blocks/call_to_action_area.html')),
+
         ('raw_html', blocks.StructBlock([
-            ('html', blocks.RawHTMLBlock(required=True)),
+            ('html', blocks.RawHTMLBlock()),
         ], template='core/blocks/raw_html.html')),
     ])
 
