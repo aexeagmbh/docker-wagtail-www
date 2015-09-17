@@ -423,3 +423,6 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
     content_panels = BaseFieldsMixin.content_panels + [
         StreamFieldPanel('content'),
     ]
+
+    class Meta:
+        verbose_name = 'Flexible content page'
