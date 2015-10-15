@@ -385,7 +385,7 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
         ('quotation', blocks.StructBlock([
             ('image', ImageChooserBlock()),
             ('text', blocks.TextBlock(help_text="quotation marks (“...”) will be added automatically")),
-            ('name', blocks.CharBlock()),
+            ('name', blocks.RichTextBlock()),
         ], template='core/blocks/quotation.html')),
 
         ('one_column_text', blocks.StructBlock([
