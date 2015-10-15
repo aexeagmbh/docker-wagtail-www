@@ -6,7 +6,7 @@
             {% image self.image fill-170x170 class="quote-image" %}
             <blockquote>
                 <p>“{{ self.text|linebreaksbr }}”</p>
-                <p>{{ self.name }}</p>
+                <p>{{ self.name|richtext }}</p>
             </blockquote>
         </div>
     </div>
