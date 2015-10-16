@@ -448,3 +448,7 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
 
     class Meta:
         verbose_name = 'Flexible content page'
+
+
+from wagtail.wagtailimages.formats import register_image_format, Format
+register_image_format(Format('real-fullwidth', 'Real full width', 'richtext-image real-full-width', 'width-1024'))
