@@ -425,9 +425,11 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
         ], template='core/blocks/six_column_text.html')),
 
         ('call_to_action_area', blocks.StructBlock([
-            ('title', blocks.CharBlock()),
+            ('title', blocks.CharBlock(required=False)),
             ('button_label', blocks.CharBlock()),
             ('button_link', blocks.URLBlock()),
+            ('button2_label', blocks.CharBlock(required=False)),
+            ('button2_link', blocks.URLBlock(required=False)),
         ], template='core/blocks/call_to_action_area.html')),
 
         ('raw_html', blocks.StructBlock([
