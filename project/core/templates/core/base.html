@@ -11,32 +11,180 @@
         {% compress css %}
         <link rel="stylesheet" href="{% static 'css/app.css' %}" />
         <link rel="stylesheet" href="{% static 'css/extra.css' %}" />
-    {% endcompress %}
-    <script>
-    document.documentElement.className = document.documentElement.className.replace("no-js", "js");
-    </script>
-    <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
-    <script type="text/javascript">window.liveSettings={api_key:"51d0bf36641a4d3e950af0d02c1fa3d7"};</script>
-</head>
-<body>
-    <div class="container">
-        {% if request.user.is_authenticated %}
+        {% endcompress %}
+        <script>
+            document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+        </script>
+        <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
+        <script type="text/javascript">window.liveSettings={api_key:"51d0bf36641a4d3e950af0d02c1fa3d7"};</script>
+    </head>
+    <body>
+        <div class="container">
+            {% if request.user.is_authenticated %}
             {% wagtailuserbar %}
-        {% endif %}
-        <header role="banner">
-            <section>
+            {% endif %}
+            <header role="banner">
+                <section>
+                    <div class="row">
+                        <div class="large-12 columns text-right">
+                            <a style="margin:0.5rem" href="https://www.ax-semantics.com/"><img src="{% static 'img/flags/16/US.png' %}" /></a>
+                            {# <a style="margin:0.5rem" href="https://www.ax-semantics.de/"><img src="{% static 'img/flags/16/DE.png' %}" /></a> #}
+                            <a style="margin:0.5rem" href="https://www.ax-semantics.net/"><img src="{% static 'img/flags/16/ES.png' %}" /></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            {%if self.hide_navigation %}
+                            {% get_site_root as site_root %}
+                            <a href="{{ site_root.url }}" class="logo nav-hidden" >
+                                <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+                                    <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+                                        <g id="q">
+                                            <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                        </g>
+                                        <g style="fill:#f8e034" id="text">
+                                            <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                            <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                            <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                            <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                AX
+                            </a>
+                            {% else %}
+                            <nav class="top-bar clearfix" data-topbar role="navigation">
+                                <ul class="title-area">
+                                    <li class="name topbar clearfix">
+                                        {% get_site_root as site_root %}
+                                        <a href="{{ site_root.url }}" class="logo">
+                                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
+                                                <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
+                                                    <g id="q">
+                                                        <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
+                                                    </g>
+                                                    <g style="fill:#f8e034" id="text">
+                                                        <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                        <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
+                                                        <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
+                                                        <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            AX
+                                        </a>
+                                    </li>
+                                    <li class="toggle-topbar menu-icon">
+                                        <a href="#"><span>Menu</span></a>
+                                    </li>
+                                </ul>
+                                <div class="top-bar-section clearfix">
+                                    {% block menu %}
+                                    {% get_site_root as site_root %}
+                                    {% top_menu parent=site_root calling_page=self %}
+                                    {% endblock %}
+                                    {# <ul class="left"> #}
+                                        {#     <li> #}
+                                            {#         <a href="/">Home</a> #}
+                                            {#     </li> #}
+                                        {#     <li> #}
+                                            {#         <a href="/en/company/">Company</a> #}
+                                            {#     </li> #}
+                                        {#     <li> #}
+                                            {#         <a href="/en/contact/">Contact</a> #}
+                                            {#     </li> #}
+                                        {#     <li> #}
+                                            {#         <a href="http://blog.ax-semantics.com">Blog</a> #}
+                                            {#     </li> #}
+                                        {#     <li> #}
+                                            {#         <a href="/en/press/">Press</a> #}
+                                            {#     </li> #}
+                                        {# </ul> #}
+                                    <ul class="right">
+                                        <li>
+                                            <a href="https://my.ax-semantics.com/#/login">
+                                                Log in
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            {% endif %}
+                        </div>
+                    </div>
+                </section>
+                {% block header %}
+                {% if self.header_title %}
+                <section class="intro">
+                    {% if self.header_img %}
+                    <div class="intro-image">
+                        {% image self.header_img original class="intro image" %}
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h1>{{ self.header_title }}</h1>
+                            <p class="subline text-center"><strong>{{ self.header_slogan }}</strong></p>
+                        </div>
+                    </div>
+                </section>
+                {% endif %}
+                {% endblock %}
+            </header>
+            <main role="main">
+                {% block main_content %}
+                {% endblock main_content %}
+            </main>
+            <footer role="contentinfo">
+                {% if self.footer_text %}
                 <div class="row">
-                    <div class="large-12 columns text-right">
-                        <a style="margin:0.5rem" href="https://www.ax-semantics.com/"><img src="{% static 'img/flags/16/US.png' %}" /></a>
-                        {# <a style="margin:0.5rem" href="https://www.ax-semantics.de/"><img src="{% static 'img/flags/16/DE.png' %}" /></a> #}
-                        <a style="margin:0.5rem" href="https://www.ax-semantics.net/"><img src="{% static 'img/flags/16/ES.png' %}" /></a>
+
+                    <div class="large-12 columns">
+                        {{ self.footer_text|richtext }}
                     </div>
                 </div>
+                {% endif %}
+
+                {% include "core/footer.html" %}
+
                 <div class="row">
-                    <div class="large-12 columns">
-                        {%if self.hide_navigation %}
-                        {% get_site_root as site_root %}
-                        <a href="{{ site_root.url }}" class="logo nav-hidden" >
+                    <div class="small-12 medium-12 large-4 large-push-5 columns">
+                        <ul class="social-icons">
+                            <li class="social-icons__item">
+                                <a href="https://twitter.com/axsemantics" target="_blank" >
+                                    <svg class="icon-twitter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-twitter" %}"></use></svg>
+                                </a>
+                            </li>
+                            <li class="social-icons__item">
+                                <a href="https://www.facebook.com/AXsemantics" target="_blank">
+                                    <svg class="icon-facebook"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-facebook" %}"></use></svg>
+                                </a>
+                            </li>
+                            <li class="social-icons__item">
+                                <a href="http://blog.ax-semantics.com/" target="_blank">
+                                    <svg class="icon-feed"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-feed"%}"></use></svg>
+                                </a>
+                            </li>
+                            <li class="social-icons__item" >
+                                <a href="https://www.youtube.com/channel/UCtEKtGyOKRkPAnLIUFq8WPw" target="_blank">
+                                    <svg class="icon-youtube"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-youtube" %}"></use></svg>
+                                </a>
+                            </li>
+                            <li class="social-icons__item">
+                                <a href="https://github.com/axsemantics" target="_blank">
+                                    <svg class="icon-github"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-github" %}"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav"> <!-- small-text-center medium-text-right large-text-right small-12 medium-4 medium-push-8 large-3 large-push-5 columns -->
+                        <a href="/legal/">
+                            Legal / Imprint
+                        </a>
+                    </div>
+                    <div class="small-12 medium-8 medium-pull-4 large-5 large-pull-7 columns">
+                        <a href="#" class="logo">
                             <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
                                 <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
                                     <g id="q">
@@ -52,157 +200,12 @@
                             </svg>
                             AX
                         </a>
-                    {% else %}
-                        <nav class="top-bar clearfix" data-topbar role="navigation">
-                            <ul class="title-area">
-                                <li class="name topbar clearfix">
-                                    {% get_site_root as site_root %}
-                                    <a href="{{ site_root.url }}" class="logo">
-                                        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
-                                            <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
-                                                <g id="q">
-                                                    <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
-                                                </g>
-                                                <g style="fill:#f8e034" id="text">
-                                                    <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                                    <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-                                                    <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
-                                                    <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
-                                                </g>
-                                            </g>
-                                        </svg>
-                                        AX
-                                    </a>
-                                </li>
-                                <li class="toggle-topbar menu-icon">
-                                    <a href="#"><span>Menu</span></a>
-                                </li>
-                            </ul>
-                            <div class="top-bar-section clearfix">
-                                {% block menu %}
-                                    {% get_site_root as site_root %}
-                                    {% top_menu parent=site_root calling_page=self %}
-                                {% endblock %}
-                                {# <ul class="left"> #}
-                                    {#     <li> #}
-                                        {#         <a href="/">Home</a> #}
-                                    {#     </li> #}
-                                    {#     <li> #}
-                                        {#         <a href="/en/company/">Company</a> #}
-                                    {#     </li> #}
-                                    {#     <li> #}
-                                        {#         <a href="/en/contact/">Contact</a> #}
-                                    {#     </li> #}
-                                    {#     <li> #}
-                                        {#         <a href="http://blog.ax-semantics.com">Blog</a> #}
-                                    {#     </li> #}
-                                    {#     <li> #}
-                                        {#         <a href="/en/press/">Press</a> #}
-                                    {#     </li> #}
-                                {# </ul> #}
-                                <ul class="right">
-                                    <li>
-                                        <a href="https://my.ax-semantics.com/#/login">
-                                            Log in
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    {% endif %}
-                </div>
-            </div>
-        </section>
-        {% block header %}
-            {% if self.header_title %}
-                <section class="intro">
-                    {% if self.header_img %}
-                        <div class="intro-image">
-                            {% image self.header_img original class="intro image" %}
-                        </div>
-                    {% endif %}
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <h1>{{ self.header_title }}</h1>
-                            <p class="subline text-center"><strong>{{ self.header_slogan }}</strong></p>
-                        </div>
-                    </div>
-                </section>
-            {% endif %}
-        {% endblock %}
-    </header>
-    <main role="main">
-    {% block main_content %}
-    {% endblock main_content %}
-    </main>
-    <footer role="contentinfo">
-        {% if self.footer_text %}
-            <div class="row">
-                
-                <div class="large-12 columns">
-                    {{ self.footer_text|richtext }}
-                </div>
-            </div>
-        {% endif %}
-        <div class="row">
-            <div class="small-12 medium-12 large-4 large-push-5 columns">
-                <ul class="social-icons">
-                    <li class="social-icons__item">
-                        <a href="https://twitter.com/axsemantics" target="_blank" >
-                        <svg class="icon-twitter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-twitter" %}"></use></svg>
+                        <p class="copyright"> © {% now "Y" %} aexea GmbH. All rights reserved </p>
                     </a>
-                </li>
-                <li class="social-icons__item">
-                    <a href="https://www.facebook.com/AXsemantics" target="_blank">
-                    <svg class="icon-facebook"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-facebook" %}"></use></svg>
-                </a>
-            </li>
-            <li class="social-icons__item">
-                <a href="http://blog.ax-semantics.com/" target="_blank">
-                <svg class="icon-feed"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-feed"%}"></use></svg>
-            </a>
-        </li>
-        <li class="social-icons__item" >
-            <a href="https://www.youtube.com/channel/UCtEKtGyOKRkPAnLIUFq8WPw" target="_blank">
-            <svg class="icon-youtube"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-youtube" %}"></use></svg>
-        </a>
-    </li>
-    <li class="social-icons__item">
-        <a href="https://github.com/axsemantics" target="_blank">
-            <svg class="icon-github"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static "img/social-icons.svg#icon-github" %}"></use>
-            </svg>
-        </a>
-    </li>
-</ul>
-</div>
-<div class="footer-nav"> <!-- small-text-center medium-text-right large-text-right small-12 medium-4 medium-push-8 large-3 large-push-5 columns -->
-<a href="/legal/">
-Legal / Imprint
-</a>
-</div>
-<div class="small-12 medium-8 medium-pull-4 large-5 large-pull-7 columns">
-<a href="#" class="logo">
-<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="30" height="30" viewBox="0 0 300 300" id="ax-logo">
-    <g transform="matrix(1,0,0,-1,-70,620)" id="g3117">
-        <g id="q">
-            <path d="m 287.9777,340.4977 c -14.4977,9.5699 -28.9705,19.175 -43.5224,28.6673 -1.0298,0.6724 -2.6983,0.939 -3.9083,0.6724 -11.9049,-2.6295 -23.8903,-3.3414 -35.9417,-1.4385 -23.9533,3.7764 -44.2358,14.5255 -60.1939,32.8391 -20.2356,23.2136 -28.2205,50.3765 -23.8142,80.7503 3.7969,26.1521 16.4899,47.6313 37.4081,63.8517 22.6012,17.5358 48.3754,24.1247 76.5988,19.8503 24.1599,-3.6622 44.4291,-14.9855 60.2892,-33.639 19.6232,-23.0862 27.2111,-49.9063 22.9792,-79.8055 -2.8946,-20.505 -11.8566,-38.3162 -26.0261,-53.4951 -0.9595,-1.0239 -1.5938,-2.7832 -1.5938,-4.2085 -0.0176,-17.4802 0.1172,-34.9574 0.2109,-52.4375 0.003,-0.895 0,-1.7901 0,-3.0953 -1.0957,0.6548 -1.8135,1.0415 -2.4858,1.4883 m -26.2928,65.6784 c -0.06,1.9336 0.5948,3.2871 1.8912,4.6743 4.6567,4.9893 9.7354,9.7062 13.6671,15.2302 29.7322,41.7543 6.7061,100.3354 -43.3993,110.8399 -39.5776,8.3028 -78.1194,-18.113 -84.972,-58.2384 -6.4879,-37.9881 19.6173,-74.8439 57.6568,-81.6672 11.7569,-2.1036 23.2326,-1.0225 34.4505,2.4682 5.0874,1.5879 8.3746,0.9932 13.1324,-2.3086 0.063,-0.0395 7.4635,-4.9629 7.6158,-5.0581 0,5.1387 0.0923,9.5992 -0.0425,14.0597" id="path3125" style="fill:#2a9840" />
-        </g>
-        <g style="fill:#f8e034" id="text">
-            <path d="m 177.1202,494.7648 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-            <path d="m 177.1202,472.3569 90.8475,0 0,-11.0597 -90.8475,0 0,11.0597 z" />
-            <path d="m 177.126,449.9577 45.0473,0 0,-11.0611 -45.0473,0 0,11.0611 z" />
-            <path d="m 229.7261,444.4264 c 0,3.1304 2.5357,5.6661 5.6646,5.6661 3.1275,0 5.6661,-2.5357 5.6661,-5.6661 0,-3.1289 -2.5386,-5.6646 -5.6661,-5.6646 -3.1289,0 -5.6646,2.5357 -5.6646,5.6646" />
-        </g>
-    </g>
-</svg>
-AX
-</a>
-<p class="copyright"> © {% now "Y" %} aexea GmbH. All rights reserved </p>
-</a>
-</div>
-</div>
-</div>
-</footer>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 {% compress js %}
 <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
@@ -216,73 +219,73 @@ AX
 {% endcompress %}
 {% endif %}
 <script type="text/javascript">
-window.liveSettings = {
-api_key: "51d0bf36641a4d3e950af0d02c1fa3d7",
-picker: "bottom-right",
-detectlang: true,
-dynamic: true,
-autocollect: true
-};
+    window.liveSettings = {
+        api_key: "51d0bf36641a4d3e950af0d02c1fa3d7",
+        picker: "bottom-right",
+        detectlang: true,
+        dynamic: true,
+        autocollect: true
+    };
 </script>
 
 <script>
-(function(i, s, o, g, r, a, m) {
-i['GoogleAnalyticsObject'] = r;
-i[r] = i[r] || function() {
-(i[r].q = i[r].q || []).push(arguments)
-}, i[r].l = 1 * new Date();
-a = s.createElement(o),
-m = s.getElementsByTagName(o)[0];
-a.async = 1;
-a.src = g;
-m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 ga('create', 'UA-50513178-1', 'ax-semantics.com');
 ga('send', 'pageview'); </script>
 
 <!-- Intercom acquire -->
 
 <script>
-window.intercomSettings = {
-app_id: "56a54bf3818673484d09c5551b819d9daaedd377"
-};
+    window.intercomSettings = {
+        app_id: "56a54bf3818673484d09c5551b819d9daaedd377"
+    };
 </script>
 <script>
-(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/56a54bf3818673484d09c5551b819d9daaedd377';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/56a54bf3818673484d09c5551b819d9daaedd377';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
 </script>
 
 <!-- WiredMinds eMetrics tracking with LeadLab V6.4 START -->
 <script type="text/javascript"><!--
-var wiredminds = [];
-wiredminds.push(["setTrackParam", "wm_custnum", "3b555e25650ffbf3"]);
-// Begin own parameters.
-wiredminds.push(["setTrackParam", "wm_campaign_key", "utm_campaign"]);
-// End own parameters.
-wiredminds.push(["count"]);
-// wiredminds.push(["setTrackParam", "wm_content_width", 0]); // For centered layouts set content width
-// wiredminds.push(["registerHeatmapEvent", "mousedown"]);
+    var wiredminds = [];
+    wiredminds.push(["setTrackParam", "wm_custnum", "3b555e25650ffbf3"]);
+    // Begin own parameters.
+    wiredminds.push(["setTrackParam", "wm_campaign_key", "utm_campaign"]);
+    // End own parameters.
+    wiredminds.push(["count"]);
+    // wiredminds.push(["setTrackParam", "wm_content_width", 0]); // For centered layouts set content width
+    // wiredminds.push(["registerHeatmapEvent", "mousedown"]);
 
-(function() {
-	function wm_async_load() {
-		var wm = document.createElement("script");
-		wm.type = "text/javascript";
-		wm.async = true;
-		wm.src = "http://wm2.wiredminds.de/track/count.js";
-		var el = document.getElementsByTagName('script')[0];
-		el.parentNode.insertBefore(wm, el);
-	}
+    (function() {
+        function wm_async_load() {
+            var wm = document.createElement("script");
+            wm.type = "text/javascript";
+            wm.async = true;
+            wm.src = "http://wm2.wiredminds.de/track/count.js";
+            var el = document.getElementsByTagName('script')[0];
+            el.parentNode.insertBefore(wm, el);
+        }
 
-	if (window.addEventListener) {
-		window.addEventListener('load', wm_async_load, false);
-	} else if (window.attachEvent){
-		window.attachEvent('onload', wm_async_load);
-	}
-})();
+        if (window.addEventListener) {
+            window.addEventListener('load', wm_async_load, false);
+        } else if (window.attachEvent){
+            window.attachEvent('onload', wm_async_load);
+        }
+    })();
 // -->
 </script>
 
 <div>
-<a target="_blank" HREF="http://www.wiredminds.de"><img src="https://wm2.wiredminds.de/track/ctin.php?wm_custnum=3b555e25650ffbf3&nojs=1" alt="" border="0"></a>
+    <a target="_blank" HREF="http://www.wiredminds.de"><img src="https://wm2.wiredminds.de/track/ctin.php?wm_custnum=3b555e25650ffbf3&nojs=1" alt="" border="0"></a>
 </div>
 <!-- WiredMinds eMetrics tracking with LeadLab V6.4 END -->
 
