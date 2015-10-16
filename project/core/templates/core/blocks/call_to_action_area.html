@@ -12,7 +12,7 @@
         </div>
         {% if self.button2_link and self.button2_label %}
         <div class="large-6 columns text-center">
-            <a class="button" style="margin-left:1rem" href="{{ self.button2_link }}">{{ self.button2_label }}</a>
+            <a {% if not self.title %}style="margin-top:1.25rem"{% endif %} class="button" style="margin-left:1rem" href="{{ self.button2_link }}">{{ self.button2_label }}</a>
         </div>
         {% endif %}
     </div>
