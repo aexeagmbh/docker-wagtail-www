@@ -1,12 +1,19 @@
 <section class="action-bar" style="margin-bottom:1em">
+    {% if self.title %}
     <div class="row">
         <div class="large-12 columns">
-            {% if self.title %}<h2>{{ self.title }}</h2>{% endif %}
-
-            <a {% if not self.title %}style="margin-top:1.25rem"{% endif %} class="button" href="{{ self.button_link }}">{{ self.button_label }}</a>
-            {% if self.button2_link and self.button2_label %}
-                <a class="button" style="margin-left:1rem" href="{{ self.button2_link }}">{{ self.button2_label }}</a>
-            {% endif %}
+            <h2>{{ self.title }}</h2>
         </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="large-{% if self.button2_link and self.button2_label %}6{% else %}12{% endif %} columns text-center">
+            <a {% if not self.title %}style="margin-top:1.25rem"{% endif %} class="button" href="{{ self.button_link }}">{{ self.button_label }}</a>
+        </div>
+        {% if self.button2_link and self.button2_label %}
+        <div class="large-6 columns text-center">
+            <a class="button" style="margin-left:1rem" href="{{ self.button2_link }}">{{ self.button2_label }}</a>
+        </div>
+        {% endif %}
     </div>
 </section>
