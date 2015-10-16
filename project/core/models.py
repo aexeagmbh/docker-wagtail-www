@@ -408,10 +408,28 @@ class UniversalStreamPage(Page, BaseFieldsMixin):
             ('right_content', blocks.RichTextBlock()),
         ], template='core/blocks/three_column_33_33_33_text.html')),
 
+        ('four_column_text', blocks.StructBlock([
+            ('col1_content', blocks.RichTextBlock()),
+            ('col2_content', blocks.RichTextBlock()),
+            ('col3_content', blocks.RichTextBlock()),
+            ('col4_content', blocks.RichTextBlock()),
+        ], template='core/blocks/four_column_text.html')),
+
+        ('six_column_text', blocks.StructBlock([
+            ('col1_content', blocks.RichTextBlock()),
+            ('col2_content', blocks.RichTextBlock()),
+            ('col3_content', blocks.RichTextBlock()),
+            ('col4_content', blocks.RichTextBlock()),
+            ('col5_content', blocks.RichTextBlock()),
+            ('col6_content', blocks.RichTextBlock()),
+        ], template='core/blocks/six_column_text.html')),
+
         ('call_to_action_area', blocks.StructBlock([
-            ('title', blocks.CharBlock()),
+            ('title', blocks.CharBlock(required=False)),
             ('button_label', blocks.CharBlock()),
             ('button_link', blocks.URLBlock()),
+            ('button2_label', blocks.CharBlock(required=False)),
+            ('button2_link', blocks.URLBlock(required=False)),
         ], template='core/blocks/call_to_action_area.html')),
 
         ('raw_html', blocks.StructBlock([
