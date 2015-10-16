@@ -7,6 +7,6 @@
     margin-bottom: 1rem;
 }
 
-.container, .top-bar, .top-bar-section li:not(.has-form) a:not(.button) {
+.container, .top-bar, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section ul li {
     background-color: white;
 }
