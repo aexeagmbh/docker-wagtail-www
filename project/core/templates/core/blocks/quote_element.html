@@ -1,0 +1,9 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="m-quote">
+    {% image image fill-170x170 class="quote-image" %}
+    <blockquote>
+        <p>“{{ text|linebreaksbr }}”</p>
+        <p>{{ name|richtext }}</p>
+    </blockquote>
+</div>

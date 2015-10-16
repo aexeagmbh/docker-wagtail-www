@@ -1,13 +1,17 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 <div class="row">
-    <div class="large-12 columns">
-        <div class="m-quote">
-            {% image self.image fill-170x170 class="quote-image" %}
-            <blockquote>
-                <p>“{{ self.text|linebreaksbr }}”</p>
-                <p>{{ self.name|richtext }}</p>
-            </blockquote>
-        </div>
+    {% if not self.second_text or not self.second_image or not self.second_name %}
+        <div class="large-12 columns">
+    {% else %}
+        <div class="large-6 columns">
+    {% endif %}
+        {% include "core/blocks/quote_element.html" with image=self.image text=self.text name=self.name only %}
     </div>
+
+    {% if self.second_text and self.second_image and self.second_name %}
+        <div class="large-6 columns">
+            {% include "core/blocks/quote_element.html" with image=self.second_image text=self.second_text name=self.second_name only %}
+        </div>
+    {% endif %}
 </div>
