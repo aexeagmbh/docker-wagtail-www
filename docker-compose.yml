@@ -3,7 +3,6 @@ web:
   user: uid1000
   links:
    - db
-   - redis
   volumes:
    - project:/opt/code
    - log:/log
@@ -16,7 +15,5 @@ web:
   environment:
       PYTHONUNBUFFERED: 0
       DJANGO_SETTINGS_MODULE: project.settings.dev
-redis:
-  image: redis
 db:
   image: postgres:9.3
