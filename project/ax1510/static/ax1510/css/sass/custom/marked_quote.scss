@@ -1,0 +1,39 @@
+.text.marked-quote{
+  position: relative;
+  margin-bottom: 105px;
+  blockquote{
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 65px;
+    margin-top: 80px;
+    width: 625px;
+    &:before{
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -48px;
+      width: 100px;
+      height: 60px;
+      background: url('../../images/icons/icon-quote-top.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      right: 67px;
+      bottom: -46px;
+      width: 100px;
+      height: 60px;
+      background: url('../../images/icons/icon-quote-bottom.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    p{
+      font-size: 28.5px;
+      line-height: 40.37px;
+    }
+  }
+}

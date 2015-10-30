@@ -1,0 +1,47 @@
+.teaser-box{
+  min-height: 267px;
+  background-color: white;
+  color: $dark-grey;
+  padding: 30px 25px 40px 25px;
+  margin-bottom: 75px;
+  .image-wrapper{
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .text{
+    blockquote{
+      p{
+
+      }
+      footer{
+        font-size: 19px;
+        font-style: italic;
+        color: $dark-grey;
+        padding: 0;
+        &:before {
+          content: '';
+        }
+      }
+    }
+  }
+}
+.quotes-teaser{
+  .row{
+    &:nth-child(2){
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      div[class^=col] {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+body{
+  font-family: 'Source Sans Pro';
+  font-size: 19px;
+  line-height: 48px;
+  color: white;
+  font-weight: 400;
+  line-height: 28.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+blockquote{
+  border-left: none;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: white;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+  &:active{
+    text-decoration: none;
+    color: white;
+  }
+  &:focus{
+    text-decoration: none;
+    color: white;
+  }
+}
+input{
+  &:active{
+   outline: none;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+a[href^='mailto']{
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+  }
+}
+.text{
+  font-size: 19px;
+  line-height: 28.5px;
+}
+h2{
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+/*main{
+  padding-top: 670px;
+}*/
+section{
+  color: black;
+  &:nth-child(even){
+    background-color: $black;
+    color: white;
+  }
+  &:nth-child(odd){
+    background-color: white;
+    color: $black;
+  }
+}
+section.white-background{
+  background-color: white;
+  padding: 40px 0;
+  background: white;
+}
+section.black-background{
+  background-color: $black;
+  color: white;
+}
+
+
+

@@ -1,0 +1,33 @@
+/* line 1, ../../sass/custom/logos-white-background.scss */
+.logos-white-background {
+  padding: 40px 0;
+  background: white !important;
+}
+/* line 4, ../../sass/custom/logos-white-background.scss */
+.logos-white-background .logo-wrapper, .logos-white-background .button {
+  max-width: 14.5%;
+  width: auto;
+  padding-right: 20px;
+  position: relative;
+  display: inline-block;
+}
+/* line 10, ../../sass/custom/logos-white-background.scss */
+.logos-white-background .logo-wrapper:last-child, .logos-white-background .button:last-child {
+  padding-right: 0;
+  max-width: none;
+}
+/* line 14, ../../sass/custom/logos-white-background.scss */
+.logos-white-background .logo-wrapper img, .logos-white-background .button img {
+  width: auto;
+  max-width: 100%;
+  max-height: 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+/* line 25, ../../sass/custom/logos-white-background.scss */
+.logos-white-background .button {
+  width: 154px;
+}

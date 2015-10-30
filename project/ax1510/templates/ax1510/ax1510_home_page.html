@@ -1,0 +1,559 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>AX</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ax1510/css/stylesheets/screen.css' %}" media="all">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,600' rel='stylesheet' type='text/css'>
+    <script language="javascript" type="text/javascript" src="{% static 'ax1510/js/jquery-2.1.4.min.js' %}"></script>
+  </head>
+  <body>
+    <header id="header" style="background: url('{% static 'ax1510/images/image-teaser.png' %}') no-repeat;background-size: cover;background-position: 42%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-2">
+            <div class="image-wrapper">
+              <a href="#"><img src="{% static 'ax1510/images/logos/logo-AXLogo.png' %}" alt="AX Logo"/></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-10">
+            <a href="/request-demo/" class="button" target="_blank">
+                Request Demo
+            </a>
+            <a href="https://my.ax-semantics.com/#/login" class="button" target="_blank">
+              Login
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text">
+            <h1>Generate <br/>
+              unique content <br/>
+              within seconds.
+            </h1>
+            <p>A software that creates content in multiple languages from data.</p>
+          </div>
+        </div>
+        <div class="row">
+          <a href="/request-demo/" class="button" target="_blank">
+            Request Demo
+          </a>
+          <a href="/contact-us/" class="button" target="_blank">
+            Talk to sales
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+    <!-- advantages -->
+      <section class="section-advantages">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <article>
+                <div class="advantages">
+                  <div class="image-wrapper">
+                    <img src="{% static 'ax1510/images/icons/icon-clock.png' %}" alt=""/>
+                  </div>
+                  <div class="text">
+                    <h2>Reduce <br/>
+                      time to text
+                    </h2>
+                    <p>Generate your content within seconds.No more waiting for editors or translators. Get instant updates on your platform.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-4">
+              <article>
+                <div class="advantages">
+                  <div class="image-wrapper">
+                    <img src="{% static 'ax1510/images/icons/icon-diagramm.png' %}" alt=""/>
+                  </div>
+                  <div class="text">
+                    <h2>Increase <br/>
+                      conversion rates
+                    </h2>
+                    <p>Text is better than no text –don’t waste your valuable data. Use it to satisfy your users’ information needs.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-4">
+              <article>
+                <div class="advantages">
+                  <div class="image-wrapper">
+                    <img src="{% static 'ax1510/images/icons/icon-earth.png' %}" alt=""/>
+                  </div>
+                  <div class="text">
+                    <h2>ACCELERATE
+                      <span class="hidden-sm hidden-md">INTERNATIONALIZATION</span>
+                      <span class="visible-sm visible-md">INTERNATION-ALIZATION</span>
+                    </h2>
+                    <p>AX Semantics provides content in any language, enabling new domains without worrying about translators.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- partner -->
+      <section class="section-partners">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-home24.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-salesforce.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-channel21.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-jobspotting.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-earthTv.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-xs-4 col-md-2">
+              <div class="image-wrapper partners">
+                <img src="{% static 'ax1510/images/logos/logo-pointRouge.png' %}" alt=""/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- costs -->
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <article class="box-costs-standard">
+                <div class="text">
+                  <h2>basic</h2>
+                  <p class="costs">
+                    <sup>€</sup><em>999</em>/month
+                  </p>
+                  <p>
+                    billed annually
+                  </p>
+                  <p>Required Onboarding € 9.900</p>
+                  <hr/>
+                  <h3>Package size</h3>
+                  <p>20.000 Skus </p>
+                  <p>(~500 stories per day)</p>
+                  <a href="/get-started/" class="button white-background" target="_blank">
+                    Start now
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-4">
+              <article class="box-costs-standard box-costs-emphasized">
+                <div class="text">
+                  <h2>advanced</h2>
+                  <p class="costs">
+                    <sup>€</sup><em>4.499</em>/month
+                  </p>
+                  <p>
+                    billed annually
+                  </p>
+                  <p>Required Onboarding € 9.900</p>
+                  <hr/>
+                  <h3>Package size</h3>
+                  <p>100.000 Skus </p>
+                  <p>(~3.000 stories per day)</p>
+                  <a href="/get-started/" class="button white-background" target="_blank">
+                    Start now
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-4">
+              <article class="box-costs-standard">
+                <div class="text">
+                  <h2>Enterprise</h2>
+                  <p class="costs">
+                    <sup>€</sup><em>999</em>/month
+                  </p>
+                  <p>
+                    billed annually
+                  </p>
+                  <p>Required Onboarding € 9.900</p>
+                  <hr/>
+                  <h3>Package size</h3>
+                  <p>1.000.000 Skus </p>
+                  <p>(~30.000 stories per day)</p>
+                  <a href="/get-started/" class="button white-background" target="_blank">
+                    Start now
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- quotes and teaser -->
+      <section class="quotes-teaser">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <figure class="passport-photo">
+                <div class="image-wrapper">
+                  <img src="{% static 'ax1510/images/image-foto.png' %}" alt="">
+                </div>
+                <figcaption>Dr. Mario Haim, Munich University</figcaption>
+              </figure>
+            </div>
+            <div class="col-sm-8">
+              <div class="text marked-quote">
+                  <blockquote>
+                    <p>
+                      Today, automatically generated stories are hardly distinguishable from human-written stories.
+                      Compared to human-written equivalents, sports and finance articles are even perceived as both slightly more objective and comprehensive.
+                    </p>
+                  </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="teaser-box">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="image-wrapper">
+                      <img src="{% static 'ax1510/images/image-award.png' %}" alt=""/>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="text">
+                      <p>
+                        The german edition of the innovation magazine Technology Review has chosen the world’s 50 most
+                        innovative companies  […] AX Semantics is one of them.
+                      </p>
+                      <a href="/press-events-2015/" class="read-more" target="_blank">Read more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="teaser-box">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="image-wrapper">
+                      <img src="{% static 'ax1510/images/image-germany.png' %}" alt=""/>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="text">
+                      <blockquote>
+                        <p>
+                          “AX Semantics builds new bridges of communication. The project impressively shows how diverse
+                          and profoundly digitization is changing our everyday lives.”
+                        </p>
+                        <footer>
+                          Thomas Keller, Deutsche Bank
+                        </footer>
+                      </blockquote>
+                      <a href="/press-events-2015/" class="read-more" target="_blank">Read more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- process -->
+      <section class="process">
+        <div class="container">
+          <div class="row">
+            <h2>How our technology works</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-1">
+              <p class="numbering">1</p>
+            </div>
+            <div class="col-sm-4">
+              <div class="image-wrapper">
+                <img src="{% static 'ax1510/images/image-dataPool.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <div class="text">
+                <h3 class="">
+                  Use your valuable, structured data as basis for your automated content.
+                </h3>
+                <p>
+                  Your commerce system, product information database, business-intelligence platform or similar are
+                  full of valuable data that you can leverage. We use your structured data as input for your content.
+                </p>
+                <p>
+                  Integrate our technology seamless into your systems via REST-API or manually import from xlsx/csv
+                  via our webinterface. Alternatively enrich your data with data from our partners.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1">
+              <p class="numbering">2</p>
+            </div>
+            <div class="col-sm-7">
+              <div class="text">
+                <h3>
+                  A ruleset for our artificial intelligence describes what the data is about and how it is expressed.
+                </h3>
+                <p>
+                  Your data is mapped against meanings and conclusions. Relevant information in the data are extracted
+                  and your wording, linguistic styles and story structures are put into the rulesets.
+                </p>
+                <p>
+                  Editorial prospects are configured by you or us on top of formal rulesets as basis for the content generation.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="image-wrapper">
+                <img src="{% static 'ax1510/images/image-trainingRules.png' %}" alt=""/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1">
+              <p class="numbering">3</p>
+            </div>
+            <div class="col-sm-4">
+              <div class="image-wrapper">
+                <img src="{% static 'ax1510/images/image-textEngine.png' %}" alt=""/>
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <div class="text">
+                <h3>
+                  Our engine renders content from the data and the matching Rulesets.
+                </h3>
+                <p>
+                  Every generated content is unique, even if you have multiple demands for the same object and every
+                  language is being generated naturally - there is no translation.
+                </p>
+                <p>
+                  We generate written content within a split of a second second, which is then  available via API,
+                  as feed or as xls-Export.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="logos-white-background">
+        <div class="container">
+          <div class="row">
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-frankAllgemeine.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-zdf.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-dieWelt.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-horizont.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-afp.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-dieZeit.png' %}" alt=""/>
+            </div>
+            <div class="logo-wrapper">
+              <img src="{% static 'ax1510/images/logos/logo-Br.png' %}" alt=""/>
+            </div>
+            <a href="/press-events-2015/" class="button white-background" target="_blank">
+              More Press
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <h4>Request a call</h4>
+              <form name="insightly_web_to_lead" action="https://googleapps.insight.ly/WebToLead/Create" method="post">
+                <input type="hidden" name="formId" value="szmgVHR8XYlhb3hc/8Uccw=="/>
+                <input id="insightly_FirstName" type="text" name="FirstName" placeholder="First Name" />
+                <input id="insightly_LastName" type="text" name="LastName" placeholder="Last Name" />
+                <input id="insightly_Phone" type="text" name="phone" placeholder="Phone Number" />
+                <input type="hidden" id="insightly_ResponsibleUser" name="ResponsibleUser" value="748972" />
+                <input type="hidden" id="insightly_LeadSource" name="LeadSource" value="415798" />
+                <div class="submit-wrapper">
+                  <input type="submit" value="Send Request" class=""/>
+                </div>
+              </form>
+              <div class="logo-wrapper">
+                <a href="#header" class="anchor"><img src="{% static 'ax1510/images/logos/logo-AXLogo.png' %}" alt="ax logo"/></a>
+              </div>
+              <div class="copyright">
+                &copy; 2015 aexea GmbH. All rights reserved.
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <h4>Contact Sales</h4>
+              <div class="contact-data">
+                <h5>Germany:</h5>
+                <p>
+                  <a href="mailto:sales@ax-semantics.com">sales@ax-semantics.com</a>
+                </p>
+                <p>
+                  or call <a href="tel:+49711699486">+49 711 699 486</a>
+                </p>
+              </div>
+              <div class="contact-data">
+                <h5>LATAM:</h5>
+                <p>
+                  <a href="mailto:sebastian.hercovich@ax-semantics.com">sebastian.hercovich@ax-semantics.com</a>
+                </p>
+              </div>
+              <div class="contact-data">
+                <h5>US:</h5>
+                <p>
+                  <a href="mailto:info@ax-semantics.com">info@ax-semantics.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="footer-link-list">
+                    <h4>About</h4>
+                    <ul>
+                      <li><a href="/company/" target="_blank">Our story</a></li>
+                      <li><a href="/company/team/" target="_blank">Team</a></li>
+                      <li><a href="/press-events-2015/" target="_blank">Press</a></li>
+                      <li><a href="/partner/" target="_blank">Partners</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-link-list">
+                    <h4>Support</h4>
+                    <ul>
+                      <li><a href="http://atml3.rocks/" target="_blank">ATML3 Tools</a></li>
+                      <li><a href="http://apidocs.ax-semantics.com/" target="_blank">API Documentation</a></li>
+                      <li><a href="http://blog.ax-semantics.com/" target="_blank">Blog</a></li>
+                      <li><a href="http://www.clunc.eu/" target="_blank">CLUNC</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="footer-link-list">
+                    <div class="footer-box">
+                      <h4>Locations</h4>
+                      <address>
+                        <h5>Headquarter:</h5>
+                        <p>aexea GmbH</p>
+                        <p>Marienstraße 23</p>
+                        <p>70178 Stuttgart</p>
+                      </address>
+                    </div>
+                    <div class="footer-box">
+                      <h5>Latam:</h5>
+                      <p>by Brand & Label</p>
+                    </div>
+                    <div class="footer-box">
+                      <h5>Berlin Office:</h5>
+                      <p>aexea c/o Büro Y</p>
+                      <p>Greifswalder Str. 33a</p>
+                      <p>10405 Berlin</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-media-bar">
+        <div class="container">
+          <div class="row">
+            <div class="image-wrapper social-media pull-right">
+              <a href="https://twitter.com/axsemantics" target="_blank"><img src="{% static 'ax1510/images/icons/icon-twitter.png' %}" alt=""/></a>
+              <a href="https://www.facebook.com/AXsemantics" target="_blank"><img src="{% static 'ax1510/images/icons/icon-facebook.png' %}" alt=""/></a>
+              <a href="http://blog.ax-semantics.com/" target="_blank"><img src="{% static 'ax1510/images/icons/icon-rss.png' %}" alt=""/></a>
+              <a href="https://www.youtube.com/channel/UCtEKtGyOKRkPAnLIUFq8WPw" target="_blank"><img src="{% static 'ax1510/images/icons/icon-github.png' %}" alt=""/></a>
+              <a href="https://github.com/axsemantics" target="_blank"><img src="{% static 'ax1510/images/icons/icon-youtube.png' %}" alt=""/></a>
+              <a href="/legal/" target="_blank">Legal | Imprint</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-50513178-1', 'ax-semantics.com');
+      ga('send', 'pageview');
+    </script>
+    <!-- Intercom acquire -->
+    <script>
+      window.intercomSettings = {
+        app_id: "56a54bf3818673484d09c5551b819d9daaedd377"
+      };
+    </script>
+    <script>
+      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/56a54bf3818673484d09c5551b819d9daaedd377';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $('.anchor').click(function(event) {
+          event.preventDefault();
+          var hash = $(this).attr('href').split('#')[1];
+
+          if ($('#' + hash).length) {
+            var targetOffset = $('#' + hash).offset();
+          } else {
+            var targetOffset = $('body').offset();
+          }
+          if($(window).width() > 768) {
+            var targetTop = targetOffset.top - 50; // height nav
+          }else{
+            var targetTop = targetOffset.top - 100; // height nav
+          }
+          animateTop = $('html, body').animate({scrollTop : targetTop}, 800);
+        });
+      });
+    </script>
+  </body>
+</html>
