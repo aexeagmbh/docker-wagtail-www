@@ -1,0 +1,122 @@
+@media only screen and (max-width: 992px) {
+  /* line 2, ../../sass/custom/responsive_under_992.scss */
+  .advantages {
+    padding-bottom: 60px;
+  }
+  /* line 4, ../../sass/custom/responsive_under_992.scss */
+  .advantages .text {
+    padding: 0;
+  }
+
+  /* line 8, ../../sass/custom/responsive_under_992.scss */
+  .image-wrapper.partners img {
+    max-width: 180px !important;
+  }
+
+  /*.box-costs-emphasized{
+    &:before{
+      content: normal;
+    }
+    &:after{
+      content: normal;
+    }
+  }*/
+  /* line 19, ../../sass/custom/responsive_under_992.scss */
+  .box-costs-standard .text {
+    padding-bottom: 8px;
+  }
+
+  /* line 22, ../../sass/custom/responsive_under_992.scss */
+  .box-costs-emphasized .text {
+    padding-bottom: 33px;
+  }
+
+  /* line 25, ../../sass/custom/responsive_under_992.scss */
+  .box-costs-standard .text .button {
+    right: 35px;
+    bottom: -39px;
+  }
+
+  /* line 29, ../../sass/custom/responsive_under_992.scss */
+  .text.marked-quote blockquote {
+    padding-left: 15px;
+  }
+
+  /* line 32, ../../sass/custom/responsive_under_992.scss */
+  .text.marked-quote blockquote:before {
+    left: 13px;
+  }
+
+  /* line 35, ../../sass/custom/responsive_under_992.scss */
+  .text.marked-quote {
+    margin-bottom: 80px;
+  }
+
+  /*.process .row{
+    &:before{
+      content: normal;
+    }
+    &:after{
+      content: normal;
+    }
+  }*/
+  /* line 46, ../../sass/custom/responsive_under_992.scss */
+  .process .row:nth-child(2):before {
+    content: normal;
+  }
+
+  /* line 49, ../../sass/custom/responsive_under_992.scss */
+  .process .row:nth-child(3):before {
+    content: normal;
+  }
+
+  /* line 52, ../../sass/custom/responsive_under_992.scss */
+  .process .row:nth-child(3):after {
+    content: '';
+    clear: both;
+    display: table;
+    background: none;
+  }
+
+  /* line 58, ../../sass/custom/responsive_under_992.scss */
+  .process .row:last-child:before {
+    content: normal;
+  }
+
+  /* line 61, ../../sass/custom/responsive_under_992.scss */
+  .process .row:nth-child(2) .text {
+    padding-right: 0px;
+  }
+
+  /* line 64, ../../sass/custom/responsive_under_992.scss */
+  .process .row:nth-child(3) .text {
+    padding-right: 0px;
+    padding-left: 33px;
+  }
+
+  /* line 68, ../../sass/custom/responsive_under_992.scss */
+  .process .row .image-wrapper img {
+    max-width: 205px;
+  }
+
+  /* line 71, ../../sass/custom/responsive_under_992.scss */
+  .process .row .text {
+    padding-right: 0px;
+    padding-left: 33px;
+  }
+
+  /* line 75, ../../sass/custom/responsive_under_992.scss */
+  .logos-white-background .logo-wrapper {
+    max-width: 10.6%;
+  }
+
+  /* line 78, ../../sass/custom/responsive_under_992.scss */
+  footer .footer .container .row div[class^='col-'] form {
+    margin-bottom: 50px;
+  }
+
+  /* line 81, ../../sass/custom/responsive_under_992.scss */
+  footer .social-media-bar .row a {
+    margin-left: 39px;
+  }
+}

@@ -1,0 +1,43 @@
+/* line 1, ../../sass/custom/marked_quote.scss */
+.text.marked-quote {
+  position: relative;
+  margin-bottom: 105px;
+}
+/* line 4, ../../sass/custom/marked_quote.scss */
+.text.marked-quote blockquote {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 65px;
+  margin-top: 80px;
+  width: 625px;
+}
+/* line 11, ../../sass/custom/marked_quote.scss */
+.text.marked-quote blockquote:before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -48px;
+  width: 100px;
+  height: 60px;
+  background: url("../../images/icons/icon-quote-top.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 22, ../../sass/custom/marked_quote.scss */
+.text.marked-quote blockquote:after {
+  content: '';
+  position: absolute;
+  right: 67px;
+  bottom: -46px;
+  width: 100px;
+  height: 60px;
+  background: url("../../images/icons/icon-quote-bottom.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 34, ../../sass/custom/marked_quote.scss */
+.text.marked-quote blockquote p {
+  font-size: 28.5px;
+  line-height: 40.37px;
+}

@@ -1,0 +1,96 @@
+.process{
+  h2 {
+    color: $light-green;
+    font-size: 57px;
+    font-weight: 600;
+    text-align: center;
+    padding: 50px 0;
+    background-color: white;
+  }
+  p.numbering{
+    font-size: 154px;
+    line-height: 91px;
+    font-weight: 900;
+    color: white;
+    padding-top: 15px;
+  }
+  .row{
+    background-color: $dark-grey;
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    &:first-child{
+      padding: 0;
+      height: auto;
+    }
+    &:nth-child(2){
+      &:before{
+        content: '';
+        width: 1000%;
+        height: 100%;
+        display: inline-block;
+        background: $dark-grey;
+        position: absolute;
+        right: 50%;
+      }
+    }
+    &:nth-child(3){
+      position: relative;
+      div[class^='col-']{
+        padding: 15px 15px 15px 15px;
+      }
+      &:before{
+        content: '';
+        background: url('../../images/image-shadow.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -25px;
+        width: 100%;
+        height: 25px;
+      }
+      &:after{
+        content: '';
+        background: url("../../images/image-shadow.png");
+        position: relative;
+        bottom: -25px;
+        width: 100%;
+        height: 25px;
+      }
+    }
+    &:last-child{
+      margin-bottom: 0;
+      position: s;
+      &:before{
+        content: '';
+        width: 1000%;
+        height: 100%;
+        display: inline-block;
+        background: $dark-grey;
+        position: absolute;
+        right: 50%;
+      }
+    }
+    .text{
+      margin-top: 75px;
+      width: 600px;
+    }
+    .image-wrapper{
+      img{
+        max-width: 295px;
+        max-height:365px;
+      }
+    }
+    &:nth-child(even){
+      .image-wrapper{
+        position: relative;
+        left: 50px;
+      }
+      .text{
+        margin-top: 100px;
+      }
+    }
+    div[class^='col-']{
+      padding: 15px 15px 40px 15px;
+    }
+  }
+}

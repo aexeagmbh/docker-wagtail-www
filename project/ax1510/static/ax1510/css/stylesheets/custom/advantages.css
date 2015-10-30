@@ -1,0 +1,32 @@
+/* line 1, ../../sass/custom/advantages.scss */
+.advantages {
+  text-align: center;
+  padding-top: 35px;
+}
+/* line 4, ../../sass/custom/advantages.scss */
+.advantages .image-wrapper {
+  width: 107px;
+  margin: 0 auto;
+}
+/* line 7, ../../sass/custom/advantages.scss */
+.advantages .image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+/* line 12, ../../sass/custom/advantages.scss */
+.advantages .text {
+  padding: 0 12.5px 60px 12.5px;
+}
+/* line 14, ../../sass/custom/advantages.scss */
+.advantages .text h2 {
+  font-size: 28.5px;
+  line-height: 33.25px;
+  margin: 30px 0 45px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* line 21, ../../sass/custom/advantages.scss */
+.advantages .text p {
+  font-weight: 600;
+  font-size: 19px;
+}

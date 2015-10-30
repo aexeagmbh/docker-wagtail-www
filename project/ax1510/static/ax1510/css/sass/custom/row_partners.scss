@@ -1,0 +1,16 @@
+.image-wrapper.partners{
+  height: 120px;
+  position: relative;
+  img{
+    width: auto;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    max-height: 80px;
+    max-width: 176px;
+  }
+}
