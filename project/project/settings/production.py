@@ -11,6 +11,7 @@ TEMPLATE_DEBUG = False
 # http://django-compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_OFFLINE
 
 COMPRESS_OFFLINE = False
+COMPRESS_ENABLED = False
 
 
 # Send notification emails as a background task using Celery,
