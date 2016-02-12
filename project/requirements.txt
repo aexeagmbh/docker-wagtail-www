@@ -1,5 +1,6 @@
 # Minimal requirements
 Django>=1.7,<1.8
+django_compressor<2.0
 wagtail==1.0
 
 # Recommended components (require additional setup):
