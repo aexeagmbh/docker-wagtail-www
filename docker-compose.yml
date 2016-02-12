@@ -4,11 +4,9 @@ web:
   links:
    - db
   volumes:
-   - project:/opt/code
+#   - project:/opt/code
    - log:/log
-  entrypoint:
-   - python3
-   - manage.py
+  entrypoint: "python3 manage.py"
   command: "runserver 0.0.0.0:8000"
   ports:
    - "8123:8000"
