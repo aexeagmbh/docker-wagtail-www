@@ -155,3 +155,7 @@ WAGTAIL_SITE_NAME = "AX Semantics"
 
 # Whether to use face/feature detection to improve image cropping - requires OpenCV
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
+
+# production.py is useless ... because salt ...
+COMPRESS_OFFLINE = False
+COMPRESS_ENABLED = False
